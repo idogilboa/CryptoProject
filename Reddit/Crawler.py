@@ -1,19 +1,15 @@
 #!/usr/bin/env python
 
-import os
 import sys
 import argparse
 import pymysql
 import urllib2
 import json
-import collections
-import types
-import time
 import datetime
 
 def init():
     #globals setup
-    globals()['commentsDepth'] = 100
+    globals()['commentsDepth'] = 2
     globals()['threadsData'] = []
     globals()['commentsData'] = []
     
@@ -82,17 +78,6 @@ def updateCommentsTable():
             continue
           
 
-def getSubredditComments():
-    #https://github.com/pushshift/api
-    url = "https://api.pushshift.io/reddit/comment/search?subreddit={subreddit}&size={size}&sort_type=score"
-    for elem in threadsData:
-        subreddit = elem['subreddit']
-        hdr = {'User-Agent' : 'TheCryptoProject:windows10'}
-        req = urllib2.Request(url.format(subreddit = subreddit, size = commentsDepth),headers=hdr)
-        response = urllib2.urlopen(req)
-        jsonFile = response.read()
-        dataSlice = json.loads(jsonFile)['data']
-        commentsData.extend(dataSlice)
 
 def getSubredditThreads(subreddit, startTime):
     length = 500
@@ -110,12 +95,30 @@ def getSubredditThreads(subreddit, startTime):
         after = dataSlice[length - 1]['created_utc']
         threadsData.extend(dataSlice)
 
+def getSubredditComments(subreddit, startTime):
+    length = 500
+    after = startTime
+    hdr = {'User-Agent' : 'TheCryptoProject:windows10'}
+
+    #https://github.com/pushshift/api
+    url = "https://api.pushshift.io/reddit/search/comment/?subreddit={subreddit}&after={after}&size=500"
+    while (length == 500):
+        req = urllib2.Request(url.format(subreddit=subreddit, after=after), headers = hdr)
+        response = urllib2.urlopen(req)
+        jsonFile = response.read()
+        dataSlice = json.loads(jsonFile)['data']
+        length = len(dataSlice)
+        after = dataSlice[length - 1]['created_utc']
+        commentsData.extend(dataSlice)
+        
 def main(arguments):
     init()
     getSubredditThreads(args.subreddit, args.startTime)
     updateThreadsTable()
-    getSubredditComments()
+    NewgetSubredditComments(args.subreddit, args.startTime)
     updateCommentsTable()
+    cur.close()
+    conn.close()
    
 
 
