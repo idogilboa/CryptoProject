@@ -27,9 +27,14 @@ def updateThreadsTable():
     params = ['author', 'created_utc', 'full_link','num_comments','score', 'selftext', 'subreddit', 'title','id']
     colsText = ', '.join(params)
     baseQuery = "INSERT INTO reddit.threads ({colsText}) values ({colsData})"
-    for elem in threadsData:
+    for elem in globals()['threadsData']:
         try:
             colsData = []
+            elem['title'] = elem['title'].encode('ascii','ignore')
+            try:
+                elem['selftext'] = elem['selftext'].encode('ascii','ignore')
+            except:
+                elem['selftext'] = ""
             for param in params:
                 if param == 'created_utc':
                     elem[param] = datetime.datetime.fromtimestamp(int(elem[param])).strftime('%y/%m/%d %H:%M:%S')
@@ -37,15 +42,17 @@ def updateThreadsTable():
     
             colsData = str(colsData).strip('[').strip(']').replace("u'","'")
             query = baseQuery.format(colsText = colsText, colsData = colsData)
-        except KeyError:
+        except KeyError as e:
             print "KeyError - updateThreadTable"
+            print e
             continue
             
         try:
             cur.execute(query)
             conn.commit()
-        except:
+        except Exception as e:
             print "SQLError - updateThreadTable"
+            print e
             continue
           
 def updateCommentsTable():
@@ -66,15 +73,17 @@ def updateCommentsTable():
                 colsData.append(elem[param])
             colsData = str(colsData).strip('[').strip(']').replace("u'","'")
             query = baseQuery.format(colsText = colsText, colsData = colsData)
-        except KeyError:
+        except KeyError as e:
             print "KeyError - updateCommentsTable"
+            print e
             continue
             
         try:
             cur.execute(query)
             conn.commit()
-        except:
-            print "SQLError - updateThreadTable"
+        except Exception as e:
+            print "SQLError - updateCommentsTable"
+            print e
             continue
           
 
@@ -86,14 +95,20 @@ def getSubredditThreads(subreddit, startTime):
 
     #https://github.com/pushshift/api
     url = "https://api.pushshift.io/reddit/search/submission/?subreddit={subreddit}&after={after}&size=500"
+    counter = 0
+    print counter
     while (length == 500):
         req = urllib2.Request(url.format(subreddit=subreddit, after=after), headers = hdr)
         response = urllib2.urlopen(req)
         jsonFile = response.read()
         dataSlice = json.loads(jsonFile)['data']
         length = len(dataSlice)
+        globals()['threadsData'].extend(dataSlice)
+        counter += 1
+        updateCommentsTable()
         after = dataSlice[length - 1]['created_utc']
-        threadsData.extend(dataSlice)
+        globals()['threadsData'] = []
+        print "Chunk number update - {}".format(counter)
 
 def getSubredditComments(subreddit, startTime):
     length = 500
@@ -115,8 +130,8 @@ def main(arguments):
     init()
     getSubredditThreads(args.subreddit, args.startTime)
     updateThreadsTable()
-    NewgetSubredditComments(args.subreddit, args.startTime)
-    updateCommentsTable()
+#     getSubredditComments(args.subreddit, args.startTime)
+#     updateCommentsTable()
     cur.close()
     conn.close()
    
