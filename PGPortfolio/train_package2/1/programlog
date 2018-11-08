@@ -1,0 +1,2304 @@
+INFO:root:select coins offline from 2017-03-23 21:09 to 2017-04-22 22:09
+DEBUG:root:Selected coins are: ['ETH', 'XRP', 'LTC', 'reversed_USDT', 'DASH', 'XMR', 'ETC', 'FCT', 'ZEC', 'GNT', 'XEM']
+INFO:root:feature type list is ['close', 'high', 'low']
+DEBUG:root:buffer_bias is 0.000050
+INFO:root:the number of training examples is 2219, of test examples is 164
+DEBUG:root:the training set is from 0 to 2218
+DEBUG:root:the test set is from 2251 to 2446
+WARNING:tensorflow:From /Users/oravner/anaconda3/lib/python3.6/site-packages/tflearn/initializations.py:119: UniformUnitScaling.__init__ (from tensorflow.python.ops.init_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.initializers.variance_scaling instead with distribution=uniform to get equivalent behavior.
+INFO:root:upper bound in test is 13.534800437823186
+INFO:tensorflow:Summary name Conv2D/W:0 is illegal; using Conv2D/W_0 instead.
+INFO:tensorflow:Summary name Conv2D/b:0 is illegal; using Conv2D/b_0 instead.
+INFO:tensorflow:Summary name Conv2D_1/W:0 is illegal; using Conv2D_1/W_0 instead.
+INFO:tensorflow:Summary name Conv2D_1/b:0 is illegal; using Conv2D_1/b_0 instead.
+INFO:tensorflow:Summary name Conv2D_2/W:0 is illegal; using Conv2D_2/W_0 instead.
+INFO:tensorflow:Summary name Conv2D_2/b:0 is illegal; using Conv2D_2/b_0 instead.
+INFO:tensorflow:Summary name btc_bias:0 is illegal; using btc_bias_0 instead.
+INFO:tensorflow:Summary name gradients_1/Conv2D/Conv2D_grad/Conv2DBackpropFilter:0/gradient is illegal; using gradients_1/Conv2D/Conv2D_grad/Conv2DBackpropFilter_0/gradient instead.
+INFO:tensorflow:Summary name gradients_1/Conv2D/BiasAdd_grad/BiasAddGrad:0/gradient is illegal; using gradients_1/Conv2D/BiasAdd_grad/BiasAddGrad_0/gradient instead.
+INFO:tensorflow:Summary name gradients_1/AddN_2:0/gradient is illegal; using gradients_1/AddN_2_0/gradient instead.
+INFO:tensorflow:Summary name gradients_1/Conv2D_1/BiasAdd_grad/BiasAddGrad:0/gradient is illegal; using gradients_1/Conv2D_1/BiasAdd_grad/BiasAddGrad_0/gradient instead.
+INFO:tensorflow:Summary name gradients_1/AddN_1:0/gradient is illegal; using gradients_1/AddN_1_0/gradient instead.
+INFO:tensorflow:Summary name gradients_1/Conv2D_2/BiasAdd_grad/BiasAddGrad:0/gradient is illegal; using gradients_1/Conv2D_2/BiasAdd_grad/BiasAddGrad_0/gradient instead.
+INFO:tensorflow:Summary name gradients_1/Tile_grad/Sum:0/gradient is illegal; using gradients_1/Tile_grad/Sum_0/gradient instead.
+INFO:root:average time for data accessing is 2.002239227294922e-06
+INFO:root:average time for training is 0.0012578587532043456
+INFO:root:==============================
+INFO:root:step 0
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0575986
+log_mean is 0.00034146997
+loss_value is -0.000341
+log mean without commission fee is 0.000356
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010201401710510254
+INFO:root:average time for training is 0.012279136657714844
+INFO:root:==============================
+INFO:root:step 1000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0472969
+log_mean is 0.00028178576
+loss_value is -0.000282
+log mean without commission fee is 0.000592
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010979962348937988
+INFO:root:average time for training is 0.013041710138320922
+INFO:root:==============================
+INFO:root:step 2000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0445095
+log_mean is 0.00026553572
+loss_value is -0.000265
+log mean without commission fee is 0.001050
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011600022315979004
+INFO:root:average time for training is 0.01364431357383728
+INFO:root:==============================
+INFO:root:step 3000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0501896
+log_mean is 0.00029860265
+loss_value is -0.000298
+log mean without commission fee is 0.001322
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001156836748123169
+INFO:root:average time for training is 0.013810017824172974
+INFO:root:==============================
+INFO:root:step 4000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0553578
+log_mean is 0.00032853676
+loss_value is -0.000328
+log mean without commission fee is 0.001472
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012158823013305663
+INFO:root:average time for training is 0.013986855506896973
+INFO:root:==============================
+INFO:root:step 5000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0593106
+log_mean is 0.0003513297
+loss_value is -0.000351
+log mean without commission fee is 0.001549
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013476951122283936
+INFO:root:average time for training is 0.01538742446899414
+INFO:root:==============================
+INFO:root:step 6000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0618422
+log_mean is 0.00036588695
+loss_value is -0.000366
+log mean without commission fee is 0.001598
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013303422927856445
+INFO:root:average time for training is 0.015449437379837037
+INFO:root:==============================
+INFO:root:step 7000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0627272
+log_mean is 0.0003709679
+loss_value is -0.000371
+log mean without commission fee is 0.001679
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010920681953430177
+INFO:root:average time for training is 0.013051660776138306
+INFO:root:==============================
+INFO:root:step 8000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.062855
+log_mean is 0.00037170041
+loss_value is -0.000371
+log mean without commission fee is 0.001685
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011799862384796142
+INFO:root:average time for training is 0.013965651988983155
+INFO:root:==============================
+INFO:root:step 9000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.062532
+log_mean is 0.00036984478
+loss_value is -0.000370
+log mean without commission fee is 0.001689
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001223825454711914
+INFO:root:average time for training is 0.014255607843399049
+INFO:root:==============================
+INFO:root:step 10000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0634618
+log_mean is 0.0003751793
+loss_value is -0.000375
+log mean without commission fee is 0.001711
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012192420959472657
+INFO:root:average time for training is 0.013969588041305542
+INFO:root:==============================
+INFO:root:step 11000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0652889
+log_mean is 0.0003856445
+loss_value is -0.000385
+log mean without commission fee is 0.001780
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012416024208068849
+INFO:root:average time for training is 0.014171170234680177
+INFO:root:==============================
+INFO:root:step 12000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0640886
+log_mean is 0.0003787741
+loss_value is -0.000378
+log mean without commission fee is 0.001769
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010938115119934083
+INFO:root:average time for training is 0.01325050115585327
+INFO:root:==============================
+INFO:root:step 13000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0630009
+log_mean is 0.0003725336
+loss_value is -0.000372
+log mean without commission fee is 0.001771
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011158556938171387
+INFO:root:average time for training is 0.013104466676712036
+INFO:root:==============================
+INFO:root:step 14000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0627649
+log_mean is 0.0003711773
+loss_value is -0.000371
+log mean without commission fee is 0.001788
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011244091987609862
+INFO:root:average time for training is 0.013481374740600585
+INFO:root:==============================
+INFO:root:step 15000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.063584
+log_mean is 0.0003758778
+loss_value is -0.000376
+log mean without commission fee is 0.001784
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001173426389694214
+INFO:root:average time for training is 0.013773169040679932
+INFO:root:==============================
+INFO:root:step 16000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0635484
+log_mean is 0.00037567585
+loss_value is -0.000375
+log mean without commission fee is 0.001787
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010962669849395752
+INFO:root:average time for training is 0.012958187103271485
+INFO:root:==============================
+INFO:root:step 17000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0602511
+log_mean is 0.00035674518
+loss_value is -0.000356
+log mean without commission fee is 0.001795
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001083188772201538
+INFO:root:average time for training is 0.012707931995391846
+INFO:root:==============================
+INFO:root:step 18000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0588595
+log_mean is 0.00034873825
+loss_value is -0.000348
+log mean without commission fee is 0.001780
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011139774322509765
+INFO:root:average time for training is 0.013114869832992553
+INFO:root:==============================
+INFO:root:step 19000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.058551
+log_mean is 0.0003469605
+loss_value is -0.000346
+log mean without commission fee is 0.001831
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011693689823150635
+INFO:root:average time for training is 0.013611651420593262
+INFO:root:==============================
+INFO:root:step 20000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0604123
+log_mean is 0.00035766908
+loss_value is -0.000357
+log mean without commission fee is 0.001865
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011283206939697267
+INFO:root:average time for training is 0.013337410688400268
+INFO:root:==============================
+INFO:root:step 21000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0629368
+log_mean is 0.00037216546
+loss_value is -0.000372
+log mean without commission fee is 0.001903
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012428691387176513
+INFO:root:average time for training is 0.014432462692260742
+INFO:root:==============================
+INFO:root:step 22000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0609922
+log_mean is 0.00036100077
+loss_value is -0.000360
+log mean without commission fee is 0.001934
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012162842750549317
+INFO:root:average time for training is 0.014260067224502564
+INFO:root:==============================
+INFO:root:step 23000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0627875
+log_mean is 0.0003713117
+loss_value is -0.000371
+log mean without commission fee is 0.001977
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011126222610473634
+INFO:root:average time for training is 0.012949589490890503
+INFO:root:==============================
+INFO:root:step 24000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0621629
+log_mean is 0.00036772748
+loss_value is -0.000367
+log mean without commission fee is 0.001985
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011571121215820312
+INFO:root:average time for training is 0.013750298261642455
+INFO:root:==============================
+INFO:root:step 25000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0600246
+log_mean is 0.0003554374
+loss_value is -0.000355
+log mean without commission fee is 0.001985
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012004573345184325
+INFO:root:average time for training is 0.01398963713645935
+INFO:root:==============================
+INFO:root:step 26000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0571539
+log_mean is 0.00033890535
+loss_value is -0.000338
+log mean without commission fee is 0.002005
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013534748554229737
+INFO:root:average time for training is 0.01608624267578125
+INFO:root:==============================
+INFO:root:step 27000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0573813
+log_mean is 0.0003402156
+loss_value is -0.000339
+log mean without commission fee is 0.002013
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012297117710113525
+INFO:root:average time for training is 0.014381710290908813
+INFO:root:==============================
+INFO:root:step 28000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.054038
+log_mean is 0.0003209106
+loss_value is -0.000320
+log mean without commission fee is 0.002030
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010807559490203858
+INFO:root:average time for training is 0.012849189519882202
+INFO:root:==============================
+INFO:root:step 29000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.054379
+log_mean is 0.00032287696
+loss_value is -0.000322
+log mean without commission fee is 0.002042
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001132308006286621
+INFO:root:average time for training is 0.013888611793518066
+INFO:root:==============================
+INFO:root:step 30000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0569978
+log_mean is 0.0003380031
+loss_value is -0.000337
+log mean without commission fee is 0.002052
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001156155824661255
+INFO:root:average time for training is 0.013623756170272828
+INFO:root:==============================
+INFO:root:step 31000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0575922
+log_mean is 0.00034143354
+loss_value is -0.000340
+log mean without commission fee is 0.002056
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012786660194396972
+INFO:root:average time for training is 0.015066926479339599
+INFO:root:==============================
+INFO:root:step 32000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0588897
+log_mean is 0.0003489061
+loss_value is -0.000348
+log mean without commission fee is 0.002073
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012813961505889892
+INFO:root:average time for training is 0.015026702404022216
+INFO:root:==============================
+INFO:root:step 33000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0613699
+log_mean is 0.0003631707
+loss_value is -0.000362
+log mean without commission fee is 0.002085
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0015254430770874022
+INFO:root:average time for training is 0.017291721820831298
+INFO:root:==============================
+INFO:root:step 34000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0601041
+log_mean is 0.00035590006
+loss_value is -0.000354
+log mean without commission fee is 0.002070
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0014557445049285889
+INFO:root:average time for training is 0.01676909852027893
+INFO:root:==============================
+INFO:root:step 35000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0601394
+log_mean is 0.00035609858
+loss_value is -0.000355
+log mean without commission fee is 0.002072
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0014066030979156493
+INFO:root:average time for training is 0.015782999038696288
+INFO:root:==============================
+INFO:root:step 36000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0627948
+log_mean is 0.0003713532
+loss_value is -0.000370
+log mean without commission fee is 0.002091
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001392185926437378
+INFO:root:average time for training is 0.016464155673980713
+INFO:root:==============================
+INFO:root:step 37000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0627021
+log_mean is 0.0003708244
+loss_value is -0.000369
+log mean without commission fee is 0.002086
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012069242000579835
+INFO:root:average time for training is 0.014059856653213501
+INFO:root:==============================
+INFO:root:step 38000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0635921
+log_mean is 0.00037592117
+loss_value is -0.000374
+log mean without commission fee is 0.002074
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011761798858642579
+INFO:root:average time for training is 0.01327464461326599
+INFO:root:==============================
+INFO:root:step 39000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0647117
+log_mean is 0.00038234357
+loss_value is -0.000380
+log mean without commission fee is 0.002083
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013817446231842042
+INFO:root:average time for training is 0.016131433725357056
+INFO:root:==============================
+INFO:root:step 40000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.065284
+log_mean is 0.0003856158
+loss_value is -0.000384
+log mean without commission fee is 0.002075
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.00108650541305542
+INFO:root:average time for training is 0.013079623460769654
+INFO:root:==============================
+INFO:root:step 41000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0660212
+log_mean is 0.00038983626
+loss_value is -0.000388
+log mean without commission fee is 0.002079
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001065671443939209
+INFO:root:average time for training is 0.01261219358444214
+INFO:root:==============================
+INFO:root:step 42000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0670507
+log_mean is 0.0003957225
+loss_value is -0.000393
+log mean without commission fee is 0.002068
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010344889163970948
+INFO:root:average time for training is 0.012480678796768188
+INFO:root:==============================
+INFO:root:step 43000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0675005
+log_mean is 0.00039829192
+loss_value is -0.000396
+log mean without commission fee is 0.002065
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0009775984287261963
+INFO:root:average time for training is 0.011777461528778076
+INFO:root:==============================
+INFO:root:step 44000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0682999
+log_mean is 0.0004028568
+loss_value is -0.000400
+log mean without commission fee is 0.002073
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0009882867336273194
+INFO:root:average time for training is 0.011904774188995361
+INFO:root:==============================
+INFO:root:step 45000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0671351
+log_mean is 0.0003962057
+loss_value is -0.000394
+log mean without commission fee is 0.002062
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010624072551727295
+INFO:root:average time for training is 0.012532419443130494
+INFO:root:==============================
+INFO:root:step 46000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0680429
+log_mean is 0.00040138766
+loss_value is -0.000399
+log mean without commission fee is 0.002071
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001212346076965332
+INFO:root:average time for training is 0.014045246839523316
+INFO:root:==============================
+INFO:root:step 47000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0672568
+log_mean is 0.00039689796
+loss_value is -0.000394
+log mean without commission fee is 0.002064
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012004382610321044
+INFO:root:average time for training is 0.013987223386764527
+INFO:root:==============================
+INFO:root:step 48000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0683641
+log_mean is 0.00040322164
+loss_value is -0.000400
+log mean without commission fee is 0.002072
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001356743335723877
+INFO:root:average time for training is 0.015939510583877565
+INFO:root:==============================
+INFO:root:step 49000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0677924
+log_mean is 0.00039995875
+loss_value is -0.000397
+log mean without commission fee is 0.002061
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013259007930755615
+INFO:root:average time for training is 0.015445308208465576
+INFO:root:==============================
+INFO:root:step 50000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0671376
+log_mean is 0.00039621996
+loss_value is -0.000393
+log mean without commission fee is 0.002056
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0015781490802764893
+INFO:root:average time for training is 0.017488204956054687
+INFO:root:==============================
+INFO:root:step 51000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0686177
+log_mean is 0.00040466947
+loss_value is -0.000402
+log mean without commission fee is 0.002063
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0015201473236083984
+INFO:root:average time for training is 0.017548285961151124
+INFO:root:==============================
+INFO:root:step 52000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0678226
+log_mean is 0.00040013224
+loss_value is -0.000397
+log mean without commission fee is 0.002053
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012750675678253173
+INFO:root:average time for training is 0.01509616780281067
+INFO:root:==============================
+INFO:root:step 53000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0681965
+log_mean is 0.00040226322
+loss_value is -0.000399
+log mean without commission fee is 0.002059
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0014802629947662353
+INFO:root:average time for training is 0.017151709079742433
+INFO:root:==============================
+INFO:root:step 54000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0683684
+log_mean is 0.00040324626
+loss_value is -0.000400
+log mean without commission fee is 0.002059
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0014920866489410401
+INFO:root:average time for training is 0.016607062101364135
+INFO:root:==============================
+INFO:root:step 55000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0659057
+log_mean is 0.00038917328
+loss_value is -0.000386
+log mean without commission fee is 0.002031
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011520063877105712
+INFO:root:average time for training is 0.014099833488464355
+INFO:root:==============================
+INFO:root:step 56000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.06479
+log_mean is 0.00038278993
+loss_value is -0.000379
+log mean without commission fee is 0.002023
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001090686559677124
+INFO:root:average time for training is 0.012957656145095826
+INFO:root:==============================
+INFO:root:step 57000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0622855
+log_mean is 0.00036843144
+loss_value is -0.000365
+log mean without commission fee is 0.002002
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010144479274749756
+INFO:root:average time for training is 0.012174363136291505
+INFO:root:==============================
+INFO:root:step 58000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0621167
+log_mean is 0.00036746118
+loss_value is -0.000364
+log mean without commission fee is 0.002003
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001299981117248535
+INFO:root:average time for training is 0.01492093276977539
+INFO:root:==============================
+INFO:root:step 59000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0603453
+log_mean is 0.00035728424
+loss_value is -0.000353
+log mean without commission fee is 0.001990
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0015685617923736571
+INFO:root:average time for training is 0.01827764844894409
+INFO:root:==============================
+INFO:root:step 60000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0593204
+log_mean is 0.00035138836
+loss_value is -0.000347
+log mean without commission fee is 0.001976
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001245783805847168
+INFO:root:average time for training is 0.015032811880111694
+INFO:root:==============================
+INFO:root:step 61000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0585301
+log_mean is 0.0003468371
+loss_value is -0.000343
+log mean without commission fee is 0.001968
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001063587188720703
+INFO:root:average time for training is 0.012861584424972533
+INFO:root:==============================
+INFO:root:step 62000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0578245
+log_mean is 0.00034276876
+loss_value is -0.000339
+log mean without commission fee is 0.001962
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001095121145248413
+INFO:root:average time for training is 0.013136285305023193
+INFO:root:==============================
+INFO:root:step 63000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0578097
+log_mean is 0.00034268442
+loss_value is -0.000338
+log mean without commission fee is 0.001958
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0010784728527069092
+INFO:root:average time for training is 0.013027040004730225
+INFO:root:==============================
+INFO:root:step 64000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.057633
+log_mean is 0.00034166526
+loss_value is -0.000337
+log mean without commission fee is 0.001949
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0014780855178833008
+INFO:root:average time for training is 0.01664904999732971
+INFO:root:==============================
+INFO:root:step 65000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0570375
+log_mean is 0.00033823514
+loss_value is -0.000334
+log mean without commission fee is 0.001948
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.00128690767288208
+INFO:root:average time for training is 0.015297930955886841
+INFO:root:==============================
+INFO:root:step 66000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0571569
+log_mean is 0.00033892228
+loss_value is -0.000334
+log mean without commission fee is 0.001955
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0011323347091674804
+INFO:root:average time for training is 0.013662994623184203
+INFO:root:==============================
+INFO:root:step 67000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0553862
+log_mean is 0.00032870084
+loss_value is -0.000324
+log mean without commission fee is 0.001933
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012025768756866455
+INFO:root:average time for training is 0.014281560897827148
+INFO:root:==============================
+INFO:root:step 68000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0551146
+log_mean is 0.00032712647
+loss_value is -0.000322
+log mean without commission fee is 0.001937
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001505728006362915
+INFO:root:average time for training is 0.017102288246154784
+INFO:root:==============================
+INFO:root:step 69000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0555881
+log_mean is 0.00032986782
+loss_value is -0.000325
+log mean without commission fee is 0.001941
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0012741382122039794
+INFO:root:average time for training is 0.01542530918121338
+INFO:root:==============================
+INFO:root:step 70000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0546463
+log_mean is 0.00032442316
+loss_value is -0.000319
+log mean without commission fee is 0.001933
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0015463635921478271
+INFO:root:average time for training is 0.017983530282974242
+INFO:root:==============================
+INFO:root:step 71000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0550704
+log_mean is 0.00032687478
+loss_value is -0.000322
+log mean without commission fee is 0.001929
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0014662368297576904
+INFO:root:average time for training is 0.017185850620269776
+INFO:root:==============================
+INFO:root:step 72000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0539969
+log_mean is 0.00032066522
+loss_value is -0.000315
+log mean without commission fee is 0.001925
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013567659854888917
+INFO:root:average time for training is 0.015588956832885742
+INFO:root:==============================
+INFO:root:step 73000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0564009
+log_mean is 0.00033456122
+loss_value is -0.000329
+log mean without commission fee is 0.001947
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013637475967407226
+INFO:root:average time for training is 0.015762580394744874
+INFO:root:==============================
+INFO:root:step 74000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0562016
+log_mean is 0.00033341025
+loss_value is -0.000328
+log mean without commission fee is 0.001945
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0013051583766937255
+INFO:root:average time for training is 0.01570312023162842
+INFO:root:==============================
+INFO:root:step 75000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0575179
+log_mean is 0.00034100303
+loss_value is -0.000335
+log mean without commission fee is 0.001953
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0017486922740936278
+INFO:root:average time for training is 0.019020901679992677
+INFO:root:==============================
+INFO:root:step 76000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0578998
+log_mean is 0.00034320256
+loss_value is -0.000337
+log mean without commission fee is 0.001954
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.001568974733352661
+INFO:root:average time for training is 0.017806864023208618
+INFO:root:==============================
+INFO:root:step 77000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0585877
+log_mean is 0.00034716557
+loss_value is -0.000341
+log mean without commission fee is 0.001958
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0015345916748046875
+INFO:root:average time for training is 0.017054036855697632
+INFO:root:==============================
+INFO:root:step 78000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0602783
+log_mean is 0.00035690056
+loss_value is -0.000351
+log mean without commission fee is 0.001972
+
+INFO:root:==============================
+
+INFO:root:average time for data accessing is 0.0016019899845123291
+INFO:root:average time for training is 0.01880357837677002
+INFO:root:==============================
+INFO:root:step 79000
+INFO:root:------------------------------
+INFO:root:the portfolio value on test set is 1.0604641
+log_mean is 0.00035796646
+loss_value is -0.000352
+log mean without commission fee is 0.001972
+
+INFO:root:==============================
+
+INFO:tensorflow:Restoring parameters from ./train_package/1/netfile
+WARNING:root:the portfolio value train No.1 is 1.0604641 log_mean is 0.00035796646, the training time is 1291 seconds
+INFO:root:select coins offline from 2017-03-23 21:09 to 2017-04-22 22:09
+DEBUG:root:Selected coins are: ['ETH', 'XRP', 'LTC', 'reversed_USDT', 'DASH', 'XMR', 'ETC', 'FCT', 'ZEC', 'GNT', 'XEM']
+INFO:root:feature type list is ['close', 'high', 'low']
+DEBUG:root:buffer_bias is 0.000050
+INFO:root:the number of training examples is 2219, of test examples is 164
+DEBUG:root:the training set is from 0 to 2218
+DEBUG:root:the test set is from 2251 to 2446
+INFO:root:the step is 0
+DEBUG:root:the raw omega is [0.0000000e+00 2.6897870e-32 6.4101549e-36 0.0000000e+00 5.7427948e-32
+ 1.8602220e-16 5.2811889e-34 4.3357400e-36 9.9832982e-01 4.3413038e-27
+ 2.5841478e-33 1.6702216e-03]
+DEBUG:root:the portfolio change this period is : 1.020444267250064
+DEBUG:root:a new experience, indexed by 2219, was appended
+INFO:root:total assets are 1.020444 BTC
+DEBUG:root:==============================
+INFO:root:the step is 1
+DEBUG:root:the raw omega is [0.0000000e+00 2.1657294e-25 1.4692665e-27 0.0000000e+00 7.1857841e-27
+ 3.0549362e-18 7.4568449e-30 0.0000000e+00 2.2976523e-12 2.5180218e-22
+ 1.5022235e-26 1.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9990922267868081
+DEBUG:root:a new experience, indexed by 2220, was appended
+INFO:root:total assets are 1.019518 BTC
+DEBUG:root:==============================
+INFO:root:the step is 2
+DEBUG:root:the raw omega is [0.0000000e+00 3.4445533e-21 1.2043157e-18 0.0000000e+00 8.6076095e-27
+ 4.5952825e-11 3.3840956e-28 0.0000000e+00 5.5100630e-10 1.6444530e-19
+ 3.9544773e-28 1.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0110204225405173
+DEBUG:root:a new experience, indexed by 2221, was appended
+INFO:root:total assets are 1.030753 BTC
+DEBUG:root:==============================
+INFO:root:the step is 3
+DEBUG:root:the raw omega is [0.0000000e+00 6.3921592e-19 8.0302973e-19 6.7793553e-29 1.6771678e-24
+ 9.5684135e-14 7.1927455e-25 0.0000000e+00 9.9999833e-01 1.8657592e-13
+ 2.3741844e-28 1.6347228e-06]
+DEBUG:root:the portfolio change this period is : 1.001967300488134
+DEBUG:root:a new experience, indexed by 2222, was appended
+INFO:root:total assets are 1.032781 BTC
+DEBUG:root:==============================
+INFO:root:the step is 4
+DEBUG:root:the raw omega is [0.00000000e+00 1.86489825e-15 6.29181988e-18 3.58215402e-11
+ 1.25454024e-20 2.93109352e-12 5.93495996e-15 0.00000000e+00
+ 3.61939609e-01 7.26092519e-11 2.33785281e-19 6.38060391e-01]
+DEBUG:root:the portfolio change this period is : 1.0068542507091642
+DEBUG:root:a new experience, indexed by 2223, was appended
+INFO:root:total assets are 1.039860 BTC
+DEBUG:root:==============================
+INFO:root:the step is 5
+DEBUG:root:the raw omega is [0.0000000e+00 2.9034579e-13 1.1003027e-19 2.0744892e-02 6.1660330e-16
+ 1.8473914e-10 1.4290542e-14 0.0000000e+00 9.7925514e-01 3.9288971e-12
+ 9.8583077e-13 8.7454167e-12]
+DEBUG:root:the portfolio change this period is : 1.0084627955412537
+DEBUG:root:a new experience, indexed by 2224, was appended
+INFO:root:total assets are 1.048660 BTC
+DEBUG:root:==============================
+INFO:root:the step is 6
+DEBUG:root:the raw omega is [0.00000000e+00 3.43926115e-17 1.69968579e-14 9.99879479e-01
+ 1.35365540e-22 1.23245115e-15 6.58320864e-09 0.00000000e+00
+ 1.09838290e-08 5.59672751e-13 4.20299613e-20 1.20492354e-04]
+DEBUG:root:the portfolio change this period is : 1.0063622578228995
+DEBUG:root:a new experience, indexed by 2225, was appended
+INFO:root:total assets are 1.055332 BTC
+DEBUG:root:==============================
+INFO:root:the step is 7
+DEBUG:root:the raw omega is [0.0000000e+00 8.9199386e-09 3.4074869e-08 6.4456552e-02 1.6874226e-13
+ 3.0292644e-05 1.8312220e-02 0.0000000e+00 2.1912829e-11 5.9028821e-07
+ 3.7079832e-11 9.1720033e-01]
+DEBUG:root:the portfolio change this period is : 0.9858864555774839
+DEBUG:root:a new experience, indexed by 2226, was appended
+INFO:root:total assets are 1.040438 BTC
+DEBUG:root:==============================
+INFO:root:the step is 8
+DEBUG:root:the raw omega is [0.0000000e+00 2.0508198e-21 1.5380670e-23 4.0452405e-15 3.4377389e-22
+ 3.9414163e-15 7.4793891e-20 0.0000000e+00 1.6448992e-18 5.1808212e-20
+ 2.1070848e-20 1.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.017022819008675
+DEBUG:root:a new experience, indexed by 2227, was appended
+INFO:root:total assets are 1.058149 BTC
+DEBUG:root:==============================
+INFO:root:the step is 9
+DEBUG:root:the raw omega is [0.0000000e+00 1.0615504e-30 2.0445421e-26 1.0000000e+00 6.8697089e-27
+ 6.3413063e-21 1.5037929e-28 0.0000000e+00 1.1520759e-26 4.8620804e-23
+ 2.0730236e-29 2.5340039e-25]
+DEBUG:root:the portfolio change this period is : 0.9929579049600414
+DEBUG:root:a new experience, indexed by 2228, was appended
+INFO:root:total assets are 1.050697 BTC
+DEBUG:root:==============================
+INFO:root:the step is 10
+DEBUG:root:the raw omega is [0.0000000e+00 5.1843312e-31 4.7463257e-27 1.0000000e+00 2.5842279e-26
+ 8.2002518e-21 9.7127089e-27 0.0000000e+00 3.4037747e-28 1.3554623e-29
+ 6.0477139e-27 1.9521842e-38]
+DEBUG:root:the portfolio change this period is : 1.0187946557316838
+DEBUG:root:a new experience, indexed by 2229, was appended
+INFO:root:total assets are 1.070445 BTC
+DEBUG:root:==============================
+INFO:root:the step is 11
+DEBUG:root:the raw omega is [0.0000000e+00 2.9893520e-26 1.5188496e-23 1.0000000e+00 2.5445785e-20
+ 4.3359955e-19 1.2254310e-23 0.0000000e+00 1.5312710e-22 2.6005787e-23
+ 1.4554824e-19 1.0284573e-32]
+DEBUG:root:the portfolio change this period is : 0.9900760054585009
+DEBUG:root:a new experience, indexed by 2230, was appended
+INFO:root:total assets are 1.059822 BTC
+DEBUG:root:==============================
+INFO:root:the step is 12
+DEBUG:root:the raw omega is [0.0000000e+00 6.3931144e-36 2.3467524e-20 1.0000000e+00 1.6627865e-31
+ 3.4344514e-28 6.7529363e-29 0.0000000e+00 1.2756200e-35 4.3512473e-38
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0108581781387311
+DEBUG:root:a new experience, indexed by 2231, was appended
+INFO:root:total assets are 1.071329 BTC
+DEBUG:root:==============================
+INFO:root:the step is 13
+DEBUG:root:the raw omega is [0.0000000e+00 3.4959733e-26 1.9795045e-14 1.0000000e+00 1.7184112e-24
+ 5.7234565e-20 1.6239719e-22 0.0000000e+00 1.3954679e-21 2.6298059e-25
+ 8.3757172e-28 6.5310255e-30]
+DEBUG:root:the portfolio change this period is : 1.015110731124898
+DEBUG:root:a new experience, indexed by 2232, was appended
+INFO:root:total assets are 1.087518 BTC
+DEBUG:root:==============================
+INFO:root:the step is 14
+DEBUG:root:the raw omega is [0.00000000e+00 4.99997792e-17 3.98657605e-08 9.99727666e-01
+ 7.73970475e-20 1.00647484e-13 2.66421720e-15 0.00000000e+00
+ 2.72272446e-04 2.31742869e-19 4.01220416e-17 2.45277689e-19]
+DEBUG:root:the portfolio change this period is : 0.9946291355361955
+DEBUG:root:a new experience, indexed by 2233, was appended
+INFO:root:total assets are 1.081677 BTC
+DEBUG:root:==============================
+INFO:root:the step is 15
+DEBUG:root:the raw omega is [0.0000000e+00 7.8293485e-21 2.0029200e-05 9.9997902e-01 7.5017883e-17
+ 9.2535589e-07 3.6459042e-14 0.0000000e+00 1.9264755e-13 7.1309777e-16
+ 7.0374846e-21 2.5073188e-23]
+DEBUG:root:the portfolio change this period is : 0.9855283583261347
+DEBUG:root:a new experience, indexed by 2234, was appended
+INFO:root:total assets are 1.066023 BTC
+DEBUG:root:==============================
+INFO:root:the step is 16
+DEBUG:root:the raw omega is [0.0000000e+00 3.3446450e-35 4.6857855e-21 1.0000000e+00 2.4273932e-30
+ 1.3044731e-25 7.0743320e-25 0.0000000e+00 2.5441799e-28 1.3674189e-27
+ 7.3774687e-33 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0051477079672853
+DEBUG:root:a new experience, indexed by 2235, was appended
+INFO:root:total assets are 1.071511 BTC
+DEBUG:root:==============================
+INFO:root:the step is 17
+DEBUG:root:the raw omega is [0.0000000e+00 4.4494255e-30 1.3343398e-23 1.0000000e+00 8.3006240e-27
+ 5.9617118e-24 7.1911968e-24 0.0000000e+00 0.0000000e+00 1.2510163e-24
+ 3.4436618e-35 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9999157190322876
+DEBUG:root:a new experience, indexed by 2236, was appended
+INFO:root:total assets are 1.071421 BTC
+DEBUG:root:==============================
+INFO:root:the step is 18
+DEBUG:root:the raw omega is [0.0000000e+00 6.2905421e-36 2.5170481e-25 1.0000000e+00 2.9016843e-32
+ 2.1238545e-27 2.1263767e-26 0.0000000e+00 0.0000000e+00 4.7933899e-30
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0172545909881592
+DEBUG:root:a new experience, indexed by 2237, was appended
+INFO:root:total assets are 1.089908 BTC
+DEBUG:root:==============================
+INFO:root:the step is 19
+DEBUG:root:the raw omega is [0.0000000e+00 1.8830109e-18 4.3040661e-08 1.0000000e+00 1.0381011e-12
+ 2.4714827e-10 3.4848058e-09 2.9792725e-29 0.0000000e+00 1.3911606e-09
+ 4.6360020e-21 4.0649512e-36]
+DEBUG:root:the portfolio change this period is : 1.013647723362259
+DEBUG:root:a new experience, indexed by 2238, was appended
+INFO:root:total assets are 1.104782 BTC
+DEBUG:root:==============================
+INFO:root:the step is 20
+DEBUG:root:the raw omega is [0.0000000e+00 8.5406864e-20 9.9999988e-01 2.5717119e-16 1.1482629e-11
+ 1.7538636e-07 4.2044456e-14 3.4234295e-25 0.0000000e+00 7.7677997e-09
+ 2.8280375e-19 2.1061534e-34]
+DEBUG:root:the portfolio change this period is : 1.000534081649678
+DEBUG:root:a new experience, indexed by 2239, was appended
+INFO:root:total assets are 1.105372 BTC
+DEBUG:root:==============================
+INFO:root:the step is 21
+DEBUG:root:the raw omega is [0.0000000e+00 1.4643243e-14 1.0000000e+00 3.1815894e-19 1.6516967e-10
+ 7.6935114e-10 1.2395241e-11 7.7436466e-27 0.0000000e+00 2.5265262e-08
+ 7.3257282e-18 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9984215155113736
+DEBUG:root:a new experience, indexed by 2240, was appended
+INFO:root:total assets are 1.103628 BTC
+DEBUG:root:==============================
+INFO:root:the step is 22
+DEBUG:root:the raw omega is [0.0000000e+00 9.3155765e-18 1.0000000e+00 2.2593754e-26 5.3136200e-14
+ 2.1865550e-12 1.1400840e-18 1.0800458e-30 0.0000000e+00 2.9413340e-11
+ 3.2346523e-19 6.2462905e-33]
+DEBUG:root:the portfolio change this period is : 1.0047430991128101
+DEBUG:root:a new experience, indexed by 2241, was appended
+INFO:root:total assets are 1.108862 BTC
+DEBUG:root:==============================
+INFO:root:the step is 23
+DEBUG:root:the raw omega is [0.0000000e+00 9.0808458e-11 9.9900872e-01 1.7547530e-08 1.1920696e-05
+ 2.5829842e-05 1.0797675e-12 1.6957296e-25 0.0000000e+00 9.5359026e-04
+ 2.1998627e-15 1.2233028e-28]
+DEBUG:root:the portfolio change this period is : 1.0078550187531972
+DEBUG:root:a new experience, indexed by 2242, was appended
+INFO:root:total assets are 1.117572 BTC
+DEBUG:root:==============================
+INFO:root:the step is 24
+DEBUG:root:the raw omega is [0.0000000e+00 2.0327043e-10 8.5555706e-07 8.8805351e-03 1.8768751e-05
+ 2.2837745e-03 1.6851253e-11 4.2868903e-22 0.0000000e+00 9.8881602e-01
+ 3.1687699e-12 1.3474210e-25]
+DEBUG:root:the portfolio change this period is : 0.9949797792230151
+DEBUG:root:a new experience, indexed by 2243, was appended
+INFO:root:total assets are 1.111962 BTC
+DEBUG:root:==============================
+INFO:root:the step is 25
+DEBUG:root:the raw omega is [0.0000000e+00 1.6475088e-12 9.8965495e-07 4.6353709e-02 6.0970865e-07
+ 4.1022288e-04 8.4482760e-10 1.8003123e-34 5.6282114e-34 9.5323443e-01
+ 7.9179234e-15 7.0127923e-26]
+DEBUG:root:the portfolio change this period is : 0.9985726733178756
+DEBUG:root:a new experience, indexed by 2244, was appended
+INFO:root:total assets are 1.110375 BTC
+DEBUG:root:==============================
+INFO:root:the step is 26
+DEBUG:root:the raw omega is [0.0000000e+00 1.8124353e-13 2.3159727e-07 9.7100317e-01 3.8505860e-08
+ 1.5520055e-03 9.3204489e-12 1.2630265e-36 0.0000000e+00 2.7444551e-02
+ 1.4796071e-18 1.2834655e-27]
+DEBUG:root:the portfolio change this period is : 1.0019748254258194
+DEBUG:root:a new experience, indexed by 2245, was appended
+INFO:root:total assets are 1.112568 BTC
+DEBUG:root:==============================
+INFO:root:the step is 27
+DEBUG:root:the raw omega is [0.0000000e+00 7.7508642e-12 1.2337223e-12 1.1148409e-01 5.0976428e-06
+ 6.7139190e-01 1.2968121e-05 0.0000000e+00 0.0000000e+00 2.1710600e-01
+ 3.1339477e-14 6.6331669e-24]
+DEBUG:root:the portfolio change this period is : 0.9962574492474516
+DEBUG:root:a new experience, indexed by 2246, was appended
+INFO:root:total assets are 1.108404 BTC
+DEBUG:root:==============================
+INFO:root:the step is 28
+DEBUG:root:the raw omega is [0.0000000e+00 6.7210034e-23 6.5479348e-06 9.9997950e-01 2.2041682e-08
+ 1.3801196e-05 1.9297716e-13 0.0000000e+00 7.9066616e-30 1.7026719e-07
+ 1.0547917e-15 1.7003045e-20]
+DEBUG:root:the portfolio change this period is : 0.9843401529748953
+DEBUG:root:a new experience, indexed by 2247, was appended
+INFO:root:total assets are 1.091046 BTC
+DEBUG:root:==============================
+INFO:root:the step is 29
+DEBUG:root:the raw omega is [0.00000000e+00 0.00000000e+00 3.81528323e-17 1.00000000e+00
+ 2.72340786e-16 2.18588616e-21 5.15967833e-20 0.00000000e+00
+ 4.57543544e-31 1.82669862e-19 1.12616710e-23 1.02730005e-33]
+DEBUG:root:the portfolio change this period is : 0.9946235577014616
+DEBUG:root:a new experience, indexed by 2248, was appended
+INFO:root:total assets are 1.085180 BTC
+DEBUG:root:==============================
+INFO:root:the step is 30
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 7.0198523e-22 1.0000000e+00 1.4192895e-27
+ 3.9131801e-28 5.4117317e-28 0.0000000e+00 0.0000000e+00 5.9633694e-25
+ 2.6491008e-30 5.3533615e-34]
+DEBUG:root:the portfolio change this period is : 1.0008299350738525
+DEBUG:root:a new experience, indexed by 2249, was appended
+INFO:root:total assets are 1.086081 BTC
+DEBUG:root:==============================
+INFO:root:the step is 31
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.2290507e-29 1.0000000e+00 6.2396887e-27
+ 6.9132661e-28 4.7268584e-30 0.0000000e+00 0.0000000e+00 6.7891652e-32
+ 3.0898332e-29 5.9512036e-35]
+DEBUG:root:the portfolio change this period is : 0.9973508715629578
+DEBUG:root:a new experience, indexed by 2250, was appended
+INFO:root:total assets are 1.083204 BTC
+DEBUG:root:==============================
+INFO:root:the step is 32
+DEBUG:root:the raw omega is [0.00000000e+00 2.82002768e-38 2.58717331e-29 1.00000000e+00
+ 6.04525490e-24 8.80946532e-23 3.10430416e-30 0.00000000e+00
+ 3.47774000e-32 9.94762461e-28 1.13631674e-23 1.25474584e-29]
+DEBUG:root:the portfolio change this period is : 1.0026570558547974
+DEBUG:root:a new experience, indexed by 2251, was appended
+INFO:root:total assets are 1.086082 BTC
+DEBUG:root:==============================
+INFO:root:the step is 33
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.5042829e-25 1.0000000e+00 2.3707617e-25
+ 2.1371918e-19 1.3232823e-26 0.0000000e+00 5.2037113e-15 2.6754971e-29
+ 2.4867779e-30 7.5912471e-24]
+DEBUG:root:the portfolio change this period is : 0.9761516451835685
+DEBUG:root:a new experience, indexed by 2252, was appended
+INFO:root:total assets are 1.060181 BTC
+DEBUG:root:==============================
+INFO:root:the step is 34
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 6.2698063e-25 0.0000000e+00
+ 0.0000000e+00 1.5469781e-35]
+DEBUG:root:the portfolio change this period is : 1.0042667388916016
+DEBUG:root:a new experience, indexed by 2253, was appended
+INFO:root:total assets are 1.064704 BTC
+DEBUG:root:==============================
+INFO:root:the step is 35
+DEBUG:root:the raw omega is [0.000000e+00 0.000000e+00 5.661258e-38 1.000000e+00 0.000000e+00
+ 9.945796e-37 0.000000e+00 0.000000e+00 3.888977e-16 0.000000e+00
+ 0.000000e+00 0.000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9971268177032475
+DEBUG:root:a new experience, indexed by 2254, was appended
+INFO:root:total assets are 1.061645 BTC
+DEBUG:root:==============================
+INFO:root:the step is 36
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 2.1103007e-29 0.0000000e+00
+ 0.0000000e+00 1.8150879e-38]
+DEBUG:root:the portfolio change this period is : 1.000433087348938
+DEBUG:root:a new experience, indexed by 2255, was appended
+INFO:root:total assets are 1.062105 BTC
+DEBUG:root:==============================
+INFO:root:the step is 37
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 1.1315787e-33 0.0000000e+00
+ 0.0000000e+00 4.6029762e-37]
+DEBUG:root:the portfolio change this period is : 1.0046790838241577
+DEBUG:root:a new experience, indexed by 2256, was appended
+INFO:root:total assets are 1.067075 BTC
+DEBUG:root:==============================
+INFO:root:the step is 38
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 2.1224150e-25 1.0000000e+00 8.0090916e-31
+ 1.2664323e-27 2.7441318e-29 0.0000000e+00 0.0000000e+00 8.7530083e-26
+ 4.0985325e-23 1.1614901e-23]
+DEBUG:root:the portfolio change this period is : 1.0101815462112427
+DEBUG:root:a new experience, indexed by 2257, was appended
+INFO:root:total assets are 1.077939 BTC
+DEBUG:root:==============================
+INFO:root:the step is 39
+DEBUG:root:the raw omega is [0.0000000e+00 1.9583107e-35 5.1308585e-15 1.0000000e+00 7.3828798e-24
+ 3.2394154e-21 3.8957865e-19 0.0000000e+00 8.2302157e-35 4.2651825e-23
+ 1.2940952e-09 6.9131797e-15]
+DEBUG:root:the portfolio change this period is : 0.9890823377281807
+DEBUG:root:a new experience, indexed by 2258, was appended
+INFO:root:total assets are 1.066170 BTC
+DEBUG:root:==============================
+INFO:root:the step is 40
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.0631653e-19 1.0000000e+00 8.7903042e-29
+ 4.7533460e-31 4.1206872e-29 0.0000000e+00 3.6335375e-23 4.0324724e-28
+ 1.4748783e-17 1.2965450e-18]
+DEBUG:root:the portfolio change this period is : 0.999550044530018
+DEBUG:root:a new experience, indexed by 2259, was appended
+INFO:root:total assets are 1.065691 BTC
+DEBUG:root:==============================
+INFO:root:the step is 41
+DEBUG:root:the raw omega is [0.00000000e+00 2.70701501e-36 2.27782276e-21 1.00000000e+00
+ 9.56361825e-28 1.17294346e-28 2.66656798e-24 0.00000000e+00
+ 1.05885529e-18 1.46832036e-26 1.13944205e-23 8.15898365e-18]
+DEBUG:root:the portfolio change this period is : 0.995279669761625
+DEBUG:root:a new experience, indexed by 2260, was appended
+INFO:root:total assets are 1.060660 BTC
+DEBUG:root:==============================
+INFO:root:the step is 42
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 8.1402367e-33 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 9.5024607e-26 8.6466253e-38
+ 3.5505205e-29 3.9838198e-21]
+DEBUG:root:the portfolio change this period is : 1.0020326375961301
+DEBUG:root:a new experience, indexed by 2261, was appended
+INFO:root:total assets are 1.062816 BTC
+DEBUG:root:==============================
+INFO:root:the step is 43
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 3.1305387e-37 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00
+ 8.0981683e-35 2.1294077e-23]
+DEBUG:root:the portfolio change this period is : 0.9768635630607605
+DEBUG:root:a new experience, indexed by 2262, was appended
+INFO:root:total assets are 1.038226 BTC
+DEBUG:root:==============================
+INFO:root:the step is 44
+DEBUG:root:the raw omega is [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+DEBUG:root:the portfolio change this period is : 1.0114355087280273
+DEBUG:root:a new experience, indexed by 2263, was appended
+INFO:root:total assets are 1.050099 BTC
+DEBUG:root:==============================
+INFO:root:the step is 45
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 3.1946008e-35 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00
+ 2.8128681e-26 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0203036069869995
+DEBUG:root:a new experience, indexed by 2264, was appended
+INFO:root:total assets are 1.071420 BTC
+DEBUG:root:==============================
+INFO:root:the step is 46
+DEBUG:root:the raw omega is [0.0000000e+00 1.1261815e-27 2.2072341e-07 9.9999952e-01 2.0153568e-25
+ 7.9350232e-27 1.8223427e-17 0.0000000e+00 2.8821544e-11 2.8865342e-18
+ 2.5602802e-07 4.7945260e-28]
+DEBUG:root:the portfolio change this period is : 1.0081939619839724
+DEBUG:root:a new experience, indexed by 2265, was appended
+INFO:root:total assets are 1.080199 BTC
+DEBUG:root:==============================
+INFO:root:the step is 47
+DEBUG:root:the raw omega is [0.0000000e+00 5.9672209e-23 4.4620110e-04 9.6134558e-09 1.7937635e-23
+ 5.2933753e-19 7.2523325e-15 0.0000000e+00 1.1782246e-08 8.2755756e-14
+ 9.9955374e-01 8.2047091e-25]
+DEBUG:root:the portfolio change this period is : 0.9889010190346799
+DEBUG:root:a new experience, indexed by 2266, was appended
+INFO:root:total assets are 1.068210 BTC
+DEBUG:root:==============================
+INFO:root:the step is 48
+DEBUG:root:the raw omega is [0.0000000e+00 2.3920791e-28 7.2350792e-18 0.0000000e+00 2.2051356e-33
+ 4.1746078e-29 2.5923552e-25 0.0000000e+00 5.7295544e-19 1.0238023e-26
+ 1.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.005017048452983
+DEBUG:root:a new experience, indexed by 2267, was appended
+INFO:root:total assets are 1.073569 BTC
+DEBUG:root:==============================
+INFO:root:the step is 49
+DEBUG:root:the raw omega is [0.0000000e+00 1.1290327e-28 9.5061929e-18 3.2945762e-26 1.2872813e-30
+ 7.4423391e-25 1.8762518e-22 0.0000000e+00 9.9999189e-01 3.3854921e-26
+ 8.0980681e-06 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0050493754273373
+DEBUG:root:a new experience, indexed by 2268, was appended
+INFO:root:total assets are 1.078990 BTC
+DEBUG:root:==============================
+INFO:root:the step is 50
+DEBUG:root:the raw omega is [0.0000000e+00 3.0308904e-37 8.8480883e-17 1.7321131e-17 2.1307641e-31
+ 3.3429461e-29 2.5336780e-23 0.0000000e+00 6.4815736e-11 6.6083272e-26
+ 1.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0036607223584653
+DEBUG:root:a new experience, indexed by 2269, was appended
+INFO:root:total assets are 1.082940 BTC
+DEBUG:root:==============================
+INFO:root:the step is 51
+DEBUG:root:the raw omega is [0.0000000e+00 3.6135576e-25 5.9787985e-21 4.1992328e-07 7.6998149e-26
+ 5.6323892e-23 1.3617842e-14 0.0000000e+00 2.0999119e-03 1.0847880e-25
+ 9.9789965e-01 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0021527777807795
+DEBUG:root:a new experience, indexed by 2270, was appended
+INFO:root:total assets are 1.085271 BTC
+DEBUG:root:==============================
+INFO:root:the step is 52
+DEBUG:root:the raw omega is [0.0000000e+00 1.9429397e-33 5.1953531e-18 2.5897906e-21 2.8245646e-35
+ 8.2163859e-34 1.0723322e-22 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 1.2514931e-10 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9906835414995493
+DEBUG:root:a new experience, indexed by 2271, was appended
+INFO:root:total assets are 1.075160 BTC
+DEBUG:root:==============================
+INFO:root:the step is 53
+DEBUG:root:the raw omega is [0.0000000e+00 2.5963460e-38 4.2172374e-19 1.9364041e-20 0.0000000e+00
+ 1.6496670e-35 1.5210034e-27 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 2.4778428e-12 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.014517187974604
+DEBUG:root:a new experience, indexed by 2272, was appended
+INFO:root:total assets are 1.090769 BTC
+DEBUG:root:==============================
+INFO:root:the step is 54
+DEBUG:root:the raw omega is [0.0000000e+00 7.7185096e-30 5.9399481e-15 6.8213603e-31 2.5597830e-30
+ 1.5044006e-29 4.8481403e-21 0.0000000e+00 9.9994302e-01 0.0000000e+00
+ 5.6923647e-05 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9875078346497229
+DEBUG:root:a new experience, indexed by 2273, was appended
+INFO:root:total assets are 1.077143 BTC
+DEBUG:root:==============================
+INFO:root:the step is 55
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.4093053e-24 3.6601966e-28 3.4527116e-35
+ 0.0000000e+00 5.0392611e-31 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 2.1313581e-23 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0018898910671006
+DEBUG:root:a new experience, indexed by 2274, was appended
+INFO:root:total assets are 1.079178 BTC
+DEBUG:root:==============================
+INFO:root:the step is 56
+DEBUG:root:the raw omega is [0.0000000e+00 5.4799783e-34 4.3214608e-28 0.0000000e+00 1.4259555e-32
+ 7.0892154e-33 1.2593243e-23 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 9.2848628e-16 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0052970647811899
+DEBUG:root:a new experience, indexed by 2275, was appended
+INFO:root:total assets are 1.084895 BTC
+DEBUG:root:==============================
+INFO:root:the step is 57
+DEBUG:root:the raw omega is [0.0000000e+00 9.5406206e-29 6.5224878e-22 1.0771128e-29 6.9689067e-25
+ 1.6980339e-25 2.6081571e-17 0.0000000e+00 1.0000000e+00 7.0650259e-33
+ 1.2725723e-13 1.5262200e-38]
+DEBUG:root:the portfolio change this period is : 1.000009298324713
+DEBUG:root:a new experience, indexed by 2276, was appended
+INFO:root:total assets are 1.084905 BTC
+DEBUG:root:==============================
+INFO:root:the step is 58
+DEBUG:root:the raw omega is [0.0000000e+00 5.6959635e-22 3.3508908e-27 3.8086370e-25 3.1715286e-21
+ 7.4623635e-23 3.6752251e-12 0.0000000e+00 1.0000000e+00 6.0550606e-25
+ 4.3296198e-17 1.4042302e-22]
+DEBUG:root:the portfolio change this period is : 1.0054074525869923
+DEBUG:root:a new experience, indexed by 2277, was appended
+INFO:root:total assets are 1.090772 BTC
+DEBUG:root:==============================
+INFO:root:the step is 59
+DEBUG:root:the raw omega is [0.0000000e+00 1.0128499e-22 5.9993926e-19 6.1955854e-23 5.7838969e-22
+ 1.5236163e-20 1.2661335e-11 0.0000000e+00 1.0000000e+00 1.5577281e-25
+ 9.9514809e-16 1.0670148e-23]
+DEBUG:root:the portfolio change this period is : 1.0189664363987865
+DEBUG:root:a new experience, indexed by 2278, was appended
+INFO:root:total assets are 1.111460 BTC
+DEBUG:root:==============================
+INFO:root:the step is 60
+DEBUG:root:the raw omega is [0.0000000e+00 6.5205710e-12 1.0234255e-12 1.1852884e-06 1.3909297e-10
+ 2.0896904e-10 1.5312895e-03 6.0536017e-31 8.9846003e-10 2.5544613e-16
+ 1.3075094e-04 9.9833679e-01]
+DEBUG:root:the portfolio change this period is : 1.0117026140949659
+DEBUG:root:a new experience, indexed by 2279, was appended
+INFO:root:total assets are 1.124467 BTC
+DEBUG:root:==============================
+INFO:root:the step is 61
+DEBUG:root:the raw omega is [0.0000000e+00 3.4914210e-11 2.5059082e-04 2.4206859e-06 3.3114453e-09
+ 2.4557215e-14 9.9561298e-01 5.9445826e-22 4.1339267e-03 1.1713206e-16
+ 5.5869237e-10 2.1691229e-10]
+DEBUG:root:the portfolio change this period is : 0.9900115261994561
+DEBUG:root:a new experience, indexed by 2280, was appended
+INFO:root:total assets are 1.113235 BTC
+DEBUG:root:==============================
+INFO:root:the step is 62
+DEBUG:root:the raw omega is [0.0000000e+00 5.4972567e-17 2.4086375e-10 1.6468526e-17 5.7566630e-16
+ 5.9391148e-20 9.9999988e-01 4.6762565e-33 1.2559569e-07 7.4749784e-17
+ 8.6569057e-19 3.5543051e-19]
+DEBUG:root:the portfolio change this period is : 0.9975002139225251
+DEBUG:root:a new experience, indexed by 2281, was appended
+INFO:root:total assets are 1.110452 BTC
+DEBUG:root:==============================
+INFO:root:the step is 63
+DEBUG:root:the raw omega is [0.00000000e+00 3.15138168e-14 1.19805485e-02 3.57054711e-14
+ 2.44221092e-16 8.21629506e-22 8.14060211e-01 1.41993772e-18
+ 1.73959315e-01 1.40754144e-15 4.44590596e-22 1.39823604e-21]
+DEBUG:root:the portfolio change this period is : 1.000045065958909
+DEBUG:root:a new experience, indexed by 2282, was appended
+INFO:root:total assets are 1.110502 BTC
+DEBUG:root:==============================
+INFO:root:the step is 64
+DEBUG:root:the raw omega is [0.0000000e+00 3.5163729e-32 2.1694640e-20 1.2089546e-27 4.1738987e-33
+ 7.3199061e-36 1.9916088e-21 2.2885817e-34 1.0000000e+00 2.9243844e-26
+ 0.0000000e+00 1.9293626e-35]
+DEBUG:root:the portfolio change this period is : 0.9986565269310858
+DEBUG:root:a new experience, indexed by 2283, was appended
+INFO:root:total assets are 1.109010 BTC
+DEBUG:root:==============================
+INFO:root:the step is 65
+DEBUG:root:the raw omega is [0.0000000e+00 1.0205926e-27 1.0270644e-19 4.2045848e-24 8.9915046e-25
+ 3.2903586e-33 2.2447457e-18 2.0646214e-19 1.0000000e+00 3.8404624e-22
+ 0.0000000e+00 1.1636966e-34]
+DEBUG:root:the portfolio change this period is : 0.9985678195953369
+DEBUG:root:a new experience, indexed by 2284, was appended
+INFO:root:total assets are 1.107422 BTC
+DEBUG:root:==============================
+INFO:root:the step is 66
+DEBUG:root:the raw omega is [0.0000000e+00 6.6673903e-22 8.4632567e-16 5.8613264e-29 4.6998512e-23
+ 3.4365001e-33 8.7273449e-24 1.7610725e-20 1.0000000e+00 1.0953154e-21
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9961577057838449
+DEBUG:root:a new experience, indexed by 2285, was appended
+INFO:root:total assets are 1.103167 BTC
+DEBUG:root:==============================
+INFO:root:the step is 67
+DEBUG:root:the raw omega is [0.0000000e+00 1.2079389e-22 2.9893125e-22 3.1176161e-32 1.1515059e-24
+ 8.7966797e-36 4.9737041e-21 4.6694190e-15 1.0000000e+00 8.2629383e-26
+ 0.0000000e+00 2.6130234e-27]
+DEBUG:root:the portfolio change this period is : 1.0104486942291306
+DEBUG:root:a new experience, indexed by 2286, was appended
+INFO:root:total assets are 1.114693 BTC
+DEBUG:root:==============================
+INFO:root:the step is 68
+DEBUG:root:the raw omega is [0.0000000e+00 3.1941519e-11 4.7094888e-15 9.1532547e-18 8.6290668e-14
+ 1.3490153e-27 3.5595413e-12 9.9999976e-01 1.8990426e-07 3.5220579e-13
+ 0.0000000e+00 5.3063009e-31]
+DEBUG:root:the portfolio change this period is : 1.0022880319064542
+DEBUG:root:a new experience, indexed by 2287, was appended
+INFO:root:total assets are 1.117244 BTC
+DEBUG:root:==============================
+INFO:root:the step is 69
+DEBUG:root:the raw omega is [0.0000000e+00 1.3344102e-04 1.4817724e-08 1.3073135e-11 1.9161126e-11
+ 1.1558842e-20 4.4893702e-03 5.4042822e-01 4.5494735e-01 1.6220429e-06
+ 0.0000000e+00 1.3831110e-28]
+DEBUG:root:the portfolio change this period is : 0.9980855055624903
+DEBUG:root:a new experience, indexed by 2288, was appended
+INFO:root:total assets are 1.115105 BTC
+DEBUG:root:==============================
+INFO:root:the step is 70
+DEBUG:root:the raw omega is [0.00000000e+00 6.34501024e-13 4.14811381e-14 9.35756160e-12
+ 1.08739676e-14 6.18219602e-24 1.24472145e-12 3.17013438e-08
+ 1.00000000e+00 9.82967874e-11 0.00000000e+00 2.14956317e-11]
+DEBUG:root:the portfolio change this period is : 1.028708678258732
+DEBUG:root:a new experience, indexed by 2289, was appended
+INFO:root:total assets are 1.147118 BTC
+DEBUG:root:==============================
+INFO:root:the step is 71
+DEBUG:root:the raw omega is [0.0000000e+00 2.7674048e-07 3.6665905e-01 6.3322073e-01 8.2317975e-09
+ 9.3569232e-18 9.3859773e-05 1.3255743e-13 5.5465737e-22 2.6207485e-05
+ 0.0000000e+00 3.8445008e-25]
+DEBUG:root:the portfolio change this period is : 0.9953844912440919
+DEBUG:root:a new experience, indexed by 2290, was appended
+INFO:root:total assets are 1.141824 BTC
+DEBUG:root:==============================
+INFO:root:the step is 72
+DEBUG:root:the raw omega is [0.0000000e+00 8.0740138e-15 2.9653555e-04 4.4983189e-10 3.5075014e-13
+ 6.6391144e-17 9.9970347e-01 2.9200303e-25 1.1657143e-20 4.2765194e-11
+ 0.0000000e+00 2.1555507e-19]
+DEBUG:root:the portfolio change this period is : 0.9915329287912853
+DEBUG:root:a new experience, indexed by 2291, was appended
+INFO:root:total assets are 1.132156 BTC
+DEBUG:root:==============================
+INFO:root:the step is 73
+DEBUG:root:the raw omega is [0.0000000e+00 1.1793091e-22 1.8074387e-16 2.2934623e-23 5.7125198e-23
+ 3.2122875e-25 1.0000000e+00 1.5662232e-27 7.3375077e-24 5.0237397e-21
+ 0.0000000e+00 1.7741722e-37]
+DEBUG:root:the portfolio change this period is : 0.9999782406974337
+DEBUG:root:a new experience, indexed by 2292, was appended
+INFO:root:total assets are 1.132131 BTC
+DEBUG:root:==============================
+INFO:root:the step is 74
+DEBUG:root:the raw omega is [0.0000000e+00 6.3471565e-23 5.9071847e-14 1.5700309e-23 1.1950649e-21
+ 8.2323402e-30 1.0000000e+00 1.7577061e-32 1.3116672e-27 9.6935011e-19
+ 0.0000000e+00 2.0571967e-37]
+DEBUG:root:the portfolio change this period is : 0.9993824958620328
+DEBUG:root:a new experience, indexed by 2293, was appended
+INFO:root:total assets are 1.131432 BTC
+DEBUG:root:==============================
+INFO:root:the step is 75
+DEBUG:root:the raw omega is [0.0000000e+00 2.0229720e-21 2.2354023e-21 2.1718759e-33 4.5158824e-19
+ 3.7737964e-33 1.0000000e+00 2.1468206e-31 4.8491405e-20 4.2498822e-16
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9987981915473036
+DEBUG:root:a new experience, indexed by 2294, was appended
+INFO:root:total assets are 1.130072 BTC
+DEBUG:root:==============================
+INFO:root:the step is 76
+DEBUG:root:the raw omega is [0.0000000e+00 2.3324572e-18 1.4841293e-16 1.1007576e-34 4.8132657e-17
+ 3.4767045e-25 1.0000000e+00 1.0756382e-30 1.4608611e-27 4.2214447e-16
+ 7.6798941e-28 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0033818483352663
+DEBUG:root:a new experience, indexed by 2295, was appended
+INFO:root:total assets are 1.133894 BTC
+DEBUG:root:==============================
+INFO:root:the step is 77
+DEBUG:root:the raw omega is [0.0000000e+00 2.7830426e-14 1.6274353e-11 9.3790276e-22 1.1193532e-15
+ 5.0576154e-23 1.0000000e+00 2.4383312e-33 9.5109685e-29 7.2775971e-18
+ 5.3417963e-26 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9969380498095727
+DEBUG:root:a new experience, indexed by 2296, was appended
+INFO:root:total assets are 1.130422 BTC
+DEBUG:root:==============================
+INFO:root:the step is 78
+DEBUG:root:the raw omega is [0.0000000e+00 7.0107212e-16 1.1223939e-14 2.2947073e-21 2.3044241e-16
+ 3.1344525e-18 1.0000000e+00 1.5795454e-32 5.6595722e-31 7.1565588e-22
+ 2.1514276e-24 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.005933880805899
+DEBUG:root:a new experience, indexed by 2297, was appended
+INFO:root:total assets are 1.137130 BTC
+DEBUG:root:==============================
+INFO:root:the step is 79
+DEBUG:root:the raw omega is [0.0000000e+00 4.6531079e-13 4.8730453e-07 3.0981910e-01 1.2387845e-10
+ 5.1591899e-14 6.9018036e-01 6.7759591e-38 8.1699957e-24 7.5268136e-16
+ 2.8943584e-10 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0006862634233935
+DEBUG:root:a new experience, indexed by 2298, was appended
+INFO:root:total assets are 1.137910 BTC
+DEBUG:root:==============================
+INFO:root:the step is 80
+DEBUG:root:the raw omega is [0.0000000e+00 4.9991196e-12 1.0924414e-11 9.9905413e-01 3.2789030e-12
+ 1.1911853e-16 9.4569277e-04 3.9215409e-09 4.9432836e-30 2.4069295e-17
+ 1.3966385e-07 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9867410031567333
+DEBUG:root:a new experience, indexed by 2299, was appended
+INFO:root:total assets are 1.122823 BTC
+DEBUG:root:==============================
+INFO:root:the step is 81
+DEBUG:root:the raw omega is [0.0000000e+00 8.9481944e-23 1.1657822e-31 1.0000000e+00 2.5473757e-20
+ 2.4197013e-30 7.0182371e-17 1.0112506e-24 0.0000000e+00 2.7602783e-22
+ 6.8003728e-14 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0043897194464702
+DEBUG:root:a new experience, indexed by 2300, was appended
+INFO:root:total assets are 1.127751 BTC
+DEBUG:root:==============================
+INFO:root:the step is 82
+DEBUG:root:the raw omega is [0.0000000e+00 2.5727098e-14 0.0000000e+00 9.9082701e-02 8.2722614e-17
+ 5.1808265e-21 6.1475083e-12 1.4996400e-23 0.0000000e+00 7.0115330e-24
+ 9.0091723e-01 4.2481519e-32]
+DEBUG:root:the portfolio change this period is : 1.0064042726753866
+DEBUG:root:a new experience, indexed by 2301, was appended
+INFO:root:total assets are 1.134974 BTC
+DEBUG:root:==============================
+INFO:root:the step is 83
+DEBUG:root:the raw omega is [0.0000000e+00 6.2822999e-04 0.0000000e+00 1.1166566e-10 6.0025838e-09
+ 3.0631585e-14 2.7050452e-05 2.2999004e-17 0.0000000e+00 4.4012148e-07
+ 9.9934429e-01 1.9090007e-15]
+DEBUG:root:the portfolio change this period is : 1.0046472035737337
+DEBUG:root:a new experience, indexed by 2302, was appended
+INFO:root:total assets are 1.140248 BTC
+DEBUG:root:==============================
+INFO:root:the step is 84
+DEBUG:root:the raw omega is [0.0000000e+00 4.8592337e-04 0.0000000e+00 6.2837530e-06 4.7644694e-10
+ 1.4493610e-10 3.4993800e-08 8.4020308e-18 2.4629343e-34 1.5267764e-11
+ 9.9950778e-01 3.7605039e-10]
+DEBUG:root:the portfolio change this period is : 0.9902617082338254
+DEBUG:root:a new experience, indexed by 2303, was appended
+INFO:root:total assets are 1.129144 BTC
+DEBUG:root:==============================
+INFO:root:the step is 85
+DEBUG:root:the raw omega is [0.0000000e+00 4.6227258e-12 0.0000000e+00 1.6233571e-09 1.4501920e-16
+ 2.7854771e-20 3.6896825e-18 1.2906320e-20 0.0000000e+00 8.7307209e-21
+ 1.0000000e+00 5.3879662e-26]
+DEBUG:root:the portfolio change this period is : 1.0090780303732183
+DEBUG:root:a new experience, indexed by 2304, was appended
+INFO:root:total assets are 1.139395 BTC
+DEBUG:root:==============================
+INFO:root:the step is 86
+DEBUG:root:the raw omega is [0.0000000e+00 1.7155152e-08 0.0000000e+00 9.9897707e-01 7.3323475e-10
+ 1.4410457e-18 2.4500560e-12 3.1810100e-15 1.2174954e-29 1.2215328e-15
+ 1.0229582e-03 1.6816810e-29]
+DEBUG:root:the portfolio change this period is : 1.0060655548167434
+DEBUG:root:a new experience, indexed by 2305, was appended
+INFO:root:total assets are 1.146306 BTC
+DEBUG:root:==============================
+INFO:root:the step is 87
+DEBUG:root:the raw omega is [0.0000000e+00 4.6388988e-07 3.2690707e-36 9.9999952e-01 8.8816959e-10
+ 1.4693665e-20 8.5136829e-13 4.5447007e-14 0.0000000e+00 3.0448425e-14
+ 2.4165725e-08 1.5504225e-34]
+DEBUG:root:the portfolio change this period is : 0.9993346323864293
+DEBUG:root:a new experience, indexed by 2306, was appended
+INFO:root:total assets are 1.145543 BTC
+DEBUG:root:==============================
+INFO:root:the step is 88
+DEBUG:root:the raw omega is [0.0000000e+00 2.1504199e-03 3.9386486e-34 9.9239737e-01 1.0472775e-07
+ 5.1160438e-18 4.4137803e-07 5.2917441e-13 9.4531985e-33 8.0729469e-06
+ 5.4435702e-03 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9940861518505628
+DEBUG:root:a new experience, indexed by 2307, was appended
+INFO:root:total assets are 1.138768 BTC
+DEBUG:root:==============================
+INFO:root:the step is 89
+DEBUG:root:the raw omega is [0.0000000e+00 5.8189559e-13 2.0642964e-36 1.0000000e+00 3.9295132e-14
+ 4.6274565e-26 3.3869240e-13 2.3993446e-13 4.3955574e-38 3.1280835e-12
+ 5.0666800e-20 2.9586755e-26]
+DEBUG:root:the portfolio change this period is : 0.9975389924342158
+DEBUG:root:a new experience, indexed by 2308, was appended
+INFO:root:total assets are 1.135966 BTC
+DEBUG:root:==============================
+INFO:root:the step is 90
+DEBUG:root:the raw omega is [0.0000000e+00 1.4122610e-12 0.0000000e+00 9.9999857e-01 2.2917816e-14
+ 1.4252783e-18 1.0534607e-15 1.4115437e-06 2.4523089e-27 1.4574372e-10
+ 6.4368825e-14 2.5389545e-25]
+DEBUG:root:the portfolio change this period is : 0.9967917026620597
+DEBUG:root:a new experience, indexed by 2309, was appended
+INFO:root:total assets are 1.132321 BTC
+DEBUG:root:==============================
+INFO:root:the step is 91
+DEBUG:root:the raw omega is [0.0000000e+00 1.1576452e-17 0.0000000e+00 1.0000000e+00 5.7703449e-14
+ 5.5181358e-19 9.8370104e-15 2.4927246e-14 2.7713609e-34 1.4183579e-13
+ 1.5153934e-17 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.004466407329062
+DEBUG:root:a new experience, indexed by 2310, was appended
+INFO:root:total assets are 1.137379 BTC
+DEBUG:root:==============================
+INFO:root:the step is 92
+DEBUG:root:the raw omega is [0.00000000e+00 1.10869355e-10 0.00000000e+00 9.99938846e-01
+ 3.05216269e-11 3.16413922e-17 8.21478476e-12 1.99925658e-08
+ 6.92068156e-20 2.88869053e-13 6.11631622e-05 1.00792887e-35]
+DEBUG:root:the portfolio change this period is : 0.9962242577217885
+DEBUG:root:a new experience, indexed by 2311, was appended
+INFO:root:total assets are 1.133084 BTC
+DEBUG:root:==============================
+INFO:root:the step is 93
+DEBUG:root:the raw omega is [0.00000000e+00 2.43006526e-12 0.00000000e+00 1.00000000e+00
+ 5.14019383e-11 3.33574856e-14 4.95989846e-11 1.06980556e-10
+ 7.02528491e-16 3.51270835e-12 2.65095408e-20 0.00000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9940582986140717
+DEBUG:root:a new experience, indexed by 2312, was appended
+INFO:root:total assets are 1.126352 BTC
+DEBUG:root:==============================
+INFO:root:the step is 94
+DEBUG:root:the raw omega is [0.0000000e+00 6.3845877e-20 1.1968475e-38 1.0000000e+00 8.5156466e-18
+ 7.0346728e-23 1.5960647e-22 3.5241596e-18 2.7112246e-26 1.0731037e-18
+ 3.1071475e-30 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9992007016414995
+DEBUG:root:a new experience, indexed by 2313, was appended
+INFO:root:total assets are 1.125452 BTC
+DEBUG:root:==============================
+INFO:root:the step is 95
+DEBUG:root:the raw omega is [0.0000000e+00 2.8942385e-21 5.1917171e-37 1.0000000e+00 2.2558560e-16
+ 9.5162646e-22 8.1522899e-19 2.2333846e-34 3.9143198e-33 1.9339237e-20
+ 2.5584198e-27 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9931055307384731
+DEBUG:root:a new experience, indexed by 2314, was appended
+INFO:root:total assets are 1.117692 BTC
+DEBUG:root:==============================
+INFO:root:the step is 96
+DEBUG:root:the raw omega is [0.0000000e+00 1.2202559e-26 2.7920927e-36 1.0000000e+00 1.3296881e-19
+ 2.4079489e-25 1.2493294e-22 0.0000000e+00 1.1024320e-23 1.1192766e-22
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9893115162849409
+DEBUG:root:a new experience, indexed by 2315, was appended
+INFO:root:total assets are 1.105746 BTC
+DEBUG:root:==============================
+INFO:root:the step is 97
+DEBUG:root:the raw omega is [0.0000000e+00 1.0877781e-37 1.6083201e-28 1.0000000e+00 5.0771677e-27
+ 3.2944454e-30 6.4502110e-30 0.0000000e+00 3.3024985e-30 2.4816226e-30
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.997755765914917
+DEBUG:root:a new experience, indexed by 2316, was appended
+INFO:root:total assets are 1.103264 BTC
+DEBUG:root:==============================
+INFO:root:the step is 98
+DEBUG:root:the raw omega is [0.0000000e+00 5.1478434e-31 2.2279309e-37 8.5233730e-01 9.4546684e-28
+ 9.6168500e-31 3.2447229e-31 1.3991014e-27 1.4766268e-01 2.3990238e-32
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9917464882355326
+DEBUG:root:a new experience, indexed by 2317, was appended
+INFO:root:total assets are 1.094158 BTC
+DEBUG:root:==============================
+INFO:root:the step is 99
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 0.0000000e+00 8.3996101e-06 7.6012712e-38
+ 1.4758239e-38 0.0000000e+00 3.1115484e-36 9.9999166e-01 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.01067569049661
+DEBUG:root:a new experience, indexed by 2318, was appended
+INFO:root:total assets are 1.105839 BTC
+DEBUG:root:==============================
+INFO:root:the step is 100
+DEBUG:root:the raw omega is [0.0000000e+00 8.9061035e-25 3.4101439e-37 3.2704507e-04 3.0475839e-25
+ 5.7296611e-22 4.6029705e-34 2.3567021e-14 9.9967301e-01 2.8133796e-23
+ 2.6001679e-28 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0070172965406454
+DEBUG:root:a new experience, indexed by 2319, was appended
+INFO:root:total assets are 1.113599 BTC
+DEBUG:root:==============================
+INFO:root:the step is 101
+DEBUG:root:the raw omega is [0.0000000e+00 6.6555553e-20 8.6597784e-27 6.0172429e-13 5.5870835e-18
+ 4.0124530e-18 1.6841904e-32 5.9757619e-16 1.0000000e+00 2.1565120e-18
+ 2.8523420e-32 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0128812862769396
+DEBUG:root:a new experience, indexed by 2320, was appended
+INFO:root:total assets are 1.127944 BTC
+DEBUG:root:==============================
+INFO:root:the step is 102
+DEBUG:root:the raw omega is [0.0000000e+00 1.4997819e-14 9.9563408e-16 1.0000000e+00 6.2479949e-14
+ 3.3085999e-16 8.8022967e-26 1.0766092e-26 5.0544668e-10 9.1857175e-18
+ 1.3572924e-31 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0056325220021691
+DEBUG:root:a new experience, indexed by 2321, was appended
+INFO:root:total assets are 1.134297 BTC
+DEBUG:root:==============================
+INFO:root:the step is 103
+DEBUG:root:the raw omega is [0.0000000e+00 4.5956724e-12 1.6691674e-11 9.4388658e-01 8.3628754e-10
+ 6.5993552e-15 6.4111243e-13 2.8423347e-15 5.6113373e-02 8.0420082e-10
+ 6.1647609e-22 2.2698708e-37]
+DEBUG:root:the portfolio change this period is : 1.0071361011503912
+DEBUG:root:a new experience, indexed by 2322, was appended
+INFO:root:total assets are 1.142392 BTC
+DEBUG:root:==============================
+INFO:root:the step is 104
+DEBUG:root:the raw omega is [0.00000000e+00 3.15507323e-26 5.13673991e-20 6.89276820e-16
+ 6.24142824e-19 1.20805346e-23 1.81299901e-22 1.22077735e-26
+ 1.00000000e+00 3.40110011e-21 2.59849684e-30 0.00000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9980627752604391
+DEBUG:root:a new experience, indexed by 2323, was appended
+INFO:root:total assets are 1.140178 BTC
+DEBUG:root:==============================
+INFO:root:the step is 105
+DEBUG:root:the raw omega is [0.0000000e+00 3.6974696e-28 9.6420291e-24 2.2951445e-14 3.5551972e-21
+ 2.4815059e-25 4.0683753e-23 4.7655467e-31 1.0000000e+00 9.6857408e-26
+ 3.6150757e-33 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0044060944884847
+DEBUG:root:a new experience, indexed by 2324, was appended
+INFO:root:total assets are 1.145202 BTC
+DEBUG:root:==============================
+INFO:root:the step is 106
+DEBUG:root:the raw omega is [0.0000000e+00 7.4054940e-26 9.4616980e-18 4.5797580e-12 1.3712273e-19
+ 5.2205335e-22 3.3604727e-23 1.2365170e-24 1.0000000e+00 2.0471508e-24
+ 3.0957921e-21 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9972509741825722
+DEBUG:root:a new experience, indexed by 2325, was appended
+INFO:root:total assets are 1.142054 BTC
+DEBUG:root:==============================
+INFO:root:the step is 107
+DEBUG:root:the raw omega is [0.0000000e+00 6.2957580e-19 4.0323689e-11 2.9195929e-10 1.1567348e-19
+ 2.2975574e-18 1.3217759e-23 4.4677534e-18 1.0000000e+00 6.8733474e-21
+ 7.7177975e-31 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9562761190842354
+DEBUG:root:a new experience, indexed by 2326, was appended
+INFO:root:total assets are 1.092119 BTC
+DEBUG:root:==============================
+INFO:root:the step is 108
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 6.8247093e-33 0.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 2.3068126e-34 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0016019344312632
+DEBUG:root:a new experience, indexed by 2327, was appended
+INFO:root:total assets are 1.093869 BTC
+DEBUG:root:==============================
+INFO:root:the step is 109
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 3.0636817e-36 3.5835322e-34 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 8.5689362e-06 9.9999142e-01 0.0000000e+00
+ 2.4228481e-38 2.3877947e-33]
+DEBUG:root:the portfolio change this period is : 0.9929056074735977
+DEBUG:root:a new experience, indexed by 2328, was appended
+INFO:root:total assets are 1.086108 BTC
+DEBUG:root:==============================
+INFO:root:the step is 110
+DEBUG:root:the raw omega is [0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00 8.726344e-17 1.000000e+00 0.000000e+00
+ 0.000000e+00 0.000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0104960957412752
+DEBUG:root:a new experience, indexed by 2329, was appended
+INFO:root:total assets are 1.097508 BTC
+DEBUG:root:==============================
+INFO:root:the step is 111
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 2.8252542e-35 5.0391574e-34 0.0000000e+00
+ 0.0000000e+00 1.8732009e-35 3.7316824e-17 1.0000000e+00 0.0000000e+00
+ 1.4398422e-28 3.6387111e-38]
+DEBUG:root:the portfolio change this period is : 1.0129036903381348
+DEBUG:root:a new experience, indexed by 2330, was appended
+INFO:root:total assets are 1.111670 BTC
+DEBUG:root:==============================
+INFO:root:the step is 112
+DEBUG:root:the raw omega is [0.0000000e+00 2.9757801e-25 1.3467686e-12 6.3524984e-19 1.0653519e-22
+ 2.3241516e-19 1.0248803e-12 1.9322081e-10 1.0000000e+00 2.1756661e-25
+ 1.6081913e-13 2.1714816e-15]
+DEBUG:root:the portfolio change this period is : 0.9797679783848177
+DEBUG:root:a new experience, indexed by 2331, was appended
+INFO:root:total assets are 1.089179 BTC
+DEBUG:root:==============================
+INFO:root:the step is 113
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.0556637e-28 0.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00 6.0504627e-26 1.0000000e+00 0.0000000e+00
+ 5.2357730e-36 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.009834170340496
+DEBUG:root:a new experience, indexed by 2332, was appended
+INFO:root:total assets are 1.099890 BTC
+DEBUG:root:==============================
+INFO:root:the step is 114
+DEBUG:root:the raw omega is [0.0000000e+00 2.7222222e-32 1.3826111e-09 2.7341574e-26 2.6329096e-31
+ 3.8050229e-24 5.0026602e-23 1.0084643e-11 1.0000000e+00 7.3577320e-35
+ 1.5333488e-26 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9855508818187758
+DEBUG:root:a new experience, indexed by 2333, was appended
+INFO:root:total assets are 1.083997 BTC
+DEBUG:root:==============================
+INFO:root:the step is 115
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.9863214e-20 0.0000000e+00 0.0000000e+00
+ 0.0000000e+00 4.1023379e-36 1.5274136e-16 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 4.4503613e-29]
+DEBUG:root:the portfolio change this period is : 1.0092185735631607
+DEBUG:root:a new experience, indexed by 2334, was appended
+INFO:root:total assets are 1.093990 BTC
+DEBUG:root:==============================
+INFO:root:the step is 116
+DEBUG:root:the raw omega is [0.0000000e+00 1.8338332e-35 2.9499835e-13 2.2825059e-33 1.6612978e-37
+ 1.5125878e-38 2.3683518e-22 3.2765598e-08 1.0000000e+00 0.0000000e+00
+ 9.3942955e-34 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0106586540484512
+DEBUG:root:a new experience, indexed by 2335, was appended
+INFO:root:total assets are 1.105651 BTC
+DEBUG:root:==============================
+INFO:root:the step is 117
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 2.4454530e-29 0.0000000e+00 0.0000000e+00
+ 0.0000000e+00 1.8195517e-24 1.0000000e+00 5.5008364e-20 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0008284177692197
+DEBUG:root:a new experience, indexed by 2336, was appended
+INFO:root:total assets are 1.106567 BTC
+DEBUG:root:==============================
+INFO:root:the step is 118
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00 0.0000000e+00
+ 0.0000000e+00 4.7899788e-27 1.0000000e+00 6.2653038e-20 0.0000000e+00
+ 2.0166416e-33 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0060366391474356
+DEBUG:root:a new experience, indexed by 2337, was appended
+INFO:root:total assets are 1.113247 BTC
+DEBUG:root:==============================
+INFO:root:the step is 119
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 6.1185836e-34 0.0000000e+00 0.0000000e+00
+ 0.0000000e+00 8.6510326e-26 1.0000000e+00 5.0017445e-23 0.0000000e+00
+ 9.9182539e-29 1.8851805e-34]
+DEBUG:root:the portfolio change this period is : 0.997927308082253
+DEBUG:root:a new experience, indexed by 2338, was appended
+INFO:root:total assets are 1.110939 BTC
+DEBUG:root:==============================
+INFO:root:the step is 120
+DEBUG:root:the raw omega is [0.0000000e+00 7.9869069e-32 2.1308096e-19 0.0000000e+00 1.6249622e-31
+ 1.8513406e-29 1.4115820e-23 1.0000000e+00 8.0066072e-11 1.9501597e-38
+ 4.7774241e-27 4.3942263e-11]
+DEBUG:root:the portfolio change this period is : 1.0112385751064088
+DEBUG:root:a new experience, indexed by 2339, was appended
+INFO:root:total assets are 1.123425 BTC
+DEBUG:root:==============================
+INFO:root:the step is 121
+DEBUG:root:the raw omega is [0.0000000e+00 2.0645680e-22 1.3734929e-03 0.0000000e+00 2.2618172e-22
+ 1.4773335e-14 1.0908333e-10 4.8593283e-01 1.7088066e-01 7.9934810e-24
+ 2.5085352e-08 3.4181297e-01]
+DEBUG:root:the portfolio change this period is : 1.002521453926162
+DEBUG:root:a new experience, indexed by 2340, was appended
+INFO:root:total assets are 1.126257 BTC
+DEBUG:root:==============================
+INFO:root:the step is 122
+DEBUG:root:the raw omega is [0.0000000e+00 1.7185994e-21 4.5724723e-02 0.0000000e+00 3.8572484e-22
+ 7.5061778e-13 4.2225060e-19 3.0453003e-14 5.1213777e-01 7.3682299e-24
+ 4.4213757e-01 2.5286877e-09]
+DEBUG:root:the portfolio change this period is : 1.011294041315491
+DEBUG:root:a new experience, indexed by 2341, was appended
+INFO:root:total assets are 1.138977 BTC
+DEBUG:root:==============================
+INFO:root:the step is 123
+DEBUG:root:the raw omega is [0.0000000e+00 2.2870107e-16 9.9998319e-01 0.0000000e+00 6.6408354e-20
+ 1.3254260e-13 2.5115516e-15 9.3492185e-15 1.6714677e-05 2.5552914e-22
+ 8.6551253e-08 1.2516580e-18]
+DEBUG:root:the portfolio change this period is : 1.000302809867184
+DEBUG:root:a new experience, indexed by 2342, was appended
+INFO:root:total assets are 1.139322 BTC
+DEBUG:root:==============================
+INFO:root:the step is 124
+DEBUG:root:the raw omega is [0.0000000e+00 5.9765856e-16 9.9599552e-01 2.7522063e-36 1.0893035e-13
+ 2.7622349e-10 2.1821465e-06 3.9073103e-03 8.7708088e-08 2.7504564e-19
+ 9.4923875e-05 2.7471009e-19]
+DEBUG:root:the portfolio change this period is : 1.0178424633231058
+DEBUG:root:a new experience, indexed by 2343, was appended
+INFO:root:total assets are 1.159650 BTC
+DEBUG:root:==============================
+INFO:root:the step is 125
+DEBUG:root:the raw omega is [0.0000000e+00 2.7296969e-13 1.5464673e-19 5.4245561e-34 9.0061666e-11
+ 1.5749718e-05 3.9652309e-01 6.0344571e-01 1.1682785e-05 2.4146405e-16
+ 2.6917005e-10 3.8183957e-06]
+DEBUG:root:the portfolio change this period is : 0.9957630572017726
+DEBUG:root:a new experience, indexed by 2344, was appended
+INFO:root:total assets are 1.154737 BTC
+DEBUG:root:==============================
+INFO:root:the step is 126
+DEBUG:root:the raw omega is [0.0000000e+00 1.0403482e-20 2.2948921e-27 0.0000000e+00 1.2790951e-18
+ 5.9127540e-13 9.9999964e-01 4.7759051e-14 5.2984669e-18 1.2689423e-26
+ 1.0118884e-21 4.0045990e-07]
+DEBUG:root:the portfolio change this period is : 1.000646165167515
+DEBUG:root:a new experience, indexed by 2345, was appended
+INFO:root:total assets are 1.155483 BTC
+DEBUG:root:==============================
+INFO:root:the step is 127
+DEBUG:root:the raw omega is [0.0000000e+00 1.8852593e-30 7.3644273e-35 0.0000000e+00 3.8395780e-28
+ 3.0665204e-20 5.9264939e-06 4.8136261e-23 2.9644225e-24 2.4883163e-25
+ 2.2952068e-24 9.9999404e-01]
+DEBUG:root:the portfolio change this period is : 1.0042604527143295
+DEBUG:root:a new experience, indexed by 2346, was appended
+INFO:root:total assets are 1.160406 BTC
+DEBUG:root:==============================
+INFO:root:the step is 128
+DEBUG:root:the raw omega is [0.0000000e+00 2.9514838e-18 3.5646828e-32 6.7477169e-34 6.2118285e-20
+ 8.1100010e-14 5.1491999e-04 6.9618251e-21 1.7767634e-25 3.1404106e-19
+ 8.5424305e-16 9.9948502e-01]
+DEBUG:root:the portfolio change this period is : 1.0402517086849572
+DEBUG:root:a new experience, indexed by 2347, was appended
+INFO:root:total assets are 1.207114 BTC
+DEBUG:root:==============================
+INFO:root:the step is 129
+DEBUG:root:the raw omega is [0.00000000e+00 1.02297667e-11 1.18448624e-16 1.13576764e-32
+ 1.11427024e-12 1.16067968e-04 9.99883652e-01 2.65611488e-25
+ 0.00000000e+00 1.80094011e-14 2.15256662e-07 1.81932648e-31]
+DEBUG:root:the portfolio change this period is : 0.9921342457923952
+DEBUG:root:a new experience, indexed by 2348, was appended
+INFO:root:total assets are 1.197620 BTC
+DEBUG:root:==============================
+INFO:root:the step is 130
+DEBUG:root:the raw omega is [0.0000000e+00 9.6626562e-15 6.4201903e-22 1.2818723e-37 1.7739833e-14
+ 6.1244498e-10 1.0000000e+00 4.6703668e-21 1.0184971e-33 2.9888269e-19
+ 5.2233714e-11 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9986296448525089
+DEBUG:root:a new experience, indexed by 2349, was appended
+INFO:root:total assets are 1.195978 BTC
+DEBUG:root:==============================
+INFO:root:the step is 131
+DEBUG:root:the raw omega is [0.0000000e+00 5.2057840e-16 2.3910212e-24 2.1686642e-29 5.6977340e-15
+ 1.8038493e-06 9.9999821e-01 1.7183614e-25 5.6223826e-22 1.2980548e-29
+ 2.4360492e-18 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0023666601600647
+DEBUG:root:a new experience, indexed by 2350, was appended
+INFO:root:total assets are 1.198809 BTC
+DEBUG:root:==============================
+INFO:root:the step is 132
+DEBUG:root:the raw omega is [0.0000000e+00 3.3666028e-12 4.0231290e-01 2.5076708e-23 1.3677321e-14
+ 8.5292733e-04 5.9683418e-01 2.0758890e-23 1.2748139e-20 9.7996853e-29
+ 8.5453010e-18 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0033037479751423
+DEBUG:root:a new experience, indexed by 2351, was appended
+INFO:root:total assets are 1.202769 BTC
+DEBUG:root:==============================
+INFO:root:the step is 133
+DEBUG:root:the raw omega is [0.0000000e+00 2.4687431e-11 1.1248287e-09 4.8238030e-18 2.6904479e-11
+ 9.8307186e-01 1.6928112e-02 2.9779930e-14 2.3794701e-12 8.7251814e-27
+ 2.9230490e-12 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9951312924351585
+DEBUG:root:a new experience, indexed by 2352, was appended
+INFO:root:total assets are 1.196914 BTC
+DEBUG:root:==============================
+INFO:root:the step is 134
+DEBUG:root:the raw omega is [0.0000000e+00 1.3001206e-11 2.8603472e-12 4.3173351e-16 2.6011621e-17
+ 1.0000000e+00 2.8931618e-10 1.6661636e-17 9.4874003e-17 2.9553464e-27
+ 5.4349070e-19 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.000270857971354
+DEBUG:root:a new experience, indexed by 2353, was appended
+INFO:root:total assets are 1.197238 BTC
+DEBUG:root:==============================
+INFO:root:the step is 135
+DEBUG:root:the raw omega is [0.00000000e+00 9.69632019e-09 1.33948880e-10 8.83961046e-26
+ 2.60317026e-14 9.99896646e-01 1.03347811e-04 1.74872977e-10
+ 1.00449015e-11 2.60997259e-28 6.16247214e-21 0.00000000e+00]
+DEBUG:root:the portfolio change this period is : 1.00106331895685
+DEBUG:root:a new experience, indexed by 2354, was appended
+INFO:root:total assets are 1.198511 BTC
+DEBUG:root:==============================
+INFO:root:the step is 136
+DEBUG:root:the raw omega is [0.0000000e+00 1.5761614e-05 2.2420460e-08 4.6367746e-10 9.3154853e-09
+ 5.9548312e-01 4.0450105e-01 2.9644501e-19 2.9058728e-10 1.4264826e-27
+ 2.7684819e-09 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.991983675976107
+DEBUG:root:a new experience, indexed by 2355, was appended
+INFO:root:total assets are 1.188903 BTC
+DEBUG:root:==============================
+INFO:root:the step is 137
+DEBUG:root:the raw omega is [0.0000000e+00 2.1836354e-14 1.0715330e-18 4.2984927e-13 4.6561703e-14
+ 1.0957698e-08 1.0000000e+00 3.3390495e-27 4.3748648e-23 0.0000000e+00
+ 8.8834378e-23 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9998664392417788
+DEBUG:root:a new experience, indexed by 2356, was appended
+INFO:root:total assets are 1.188744 BTC
+DEBUG:root:==============================
+INFO:root:the step is 138
+DEBUG:root:the raw omega is [0.0000000e+00 3.8369762e-15 1.1169949e-14 2.3647096e-18 8.0150777e-17
+ 3.7858516e-10 1.0000000e+00 2.3759591e-32 2.4429654e-35 0.0000000e+00
+ 1.0740132e-25 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0032078030977993
+DEBUG:root:a new experience, indexed by 2357, was appended
+INFO:root:total assets are 1.192558 BTC
+DEBUG:root:==============================
+INFO:root:the step is 139
+DEBUG:root:the raw omega is [0.0000000e+00 2.1078891e-13 5.2619935e-03 2.2139536e-10 1.1149007e-07
+ 1.9546436e-01 7.9927355e-01 2.6843157e-25 8.6155120e-16 0.0000000e+00
+ 1.3213113e-25 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9978704315481469
+DEBUG:root:a new experience, indexed by 2358, was appended
+INFO:root:total assets are 1.190018 BTC
+DEBUG:root:==============================
+INFO:root:the step is 140
+DEBUG:root:the raw omega is [0.0000000e+00 1.0776114e-16 6.7731803e-06 2.0120828e-17 1.7797813e-08
+ 1.3480680e-03 9.9864513e-01 4.9091346e-14 1.3560348e-13 0.0000000e+00
+ 2.8805503e-31 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9978935732585714
+DEBUG:root:a new experience, indexed by 2359, was appended
+INFO:root:total assets are 1.187511 BTC
+DEBUG:root:==============================
+INFO:root:the step is 141
+DEBUG:root:the raw omega is [0.0000000e+00 7.7020960e-21 7.1010469e-08 1.4211063e-23 2.6045281e-08
+ 5.2314420e-04 2.2152526e-02 1.5896780e-06 9.7732258e-01 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0071981646071446
+DEBUG:root:a new experience, indexed by 2360, was appended
+INFO:root:total assets are 1.196059 BTC
+DEBUG:root:==============================
+INFO:root:the step is 142
+DEBUG:root:the raw omega is [0.0000000e+00 9.8804008e-22 3.4303176e-01 9.2808362e-19 2.8064344e-03
+ 5.9640718e-01 5.6876771e-02 3.7865230e-04 4.9921981e-04 0.0000000e+00
+ 5.7805632e-28 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9937864411863524
+DEBUG:root:a new experience, indexed by 2361, was appended
+INFO:root:total assets are 1.188627 BTC
+DEBUG:root:==============================
+INFO:root:the step is 143
+DEBUG:root:the raw omega is [0.0000000e+00 3.4749034e-27 9.7484677e-05 0.0000000e+00 6.1514883e-15
+ 4.4446560e-12 5.2833163e-12 9.9990249e-01 1.9020383e-24 0.0000000e+00
+ 2.9456119e-37 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0049055138318839
+DEBUG:root:a new experience, indexed by 2362, was appended
+INFO:root:total assets are 1.194458 BTC
+DEBUG:root:==============================
+INFO:root:the step is 144
+DEBUG:root:the raw omega is [0.0000000e+00 1.7710379e-23 1.3044053e-04 0.0000000e+00 4.1708534e-10
+ 2.5523941e-10 4.6104574e-06 9.9986494e-01 6.6647300e-16 6.6962039e-38
+ 4.4454501e-22 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0083287928379157
+DEBUG:root:a new experience, indexed by 2363, was appended
+INFO:root:total assets are 1.204407 BTC
+DEBUG:root:==============================
+INFO:root:the step is 145
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 2.8592686e-07 0.0000000e+00 2.4595674e-05
+ 9.2730520e-17 9.9997509e-01 5.2749300e-08 4.1828130e-12 3.8659469e-27
+ 3.3371574e-20 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9939973880620228
+DEBUG:root:a new experience, indexed by 2364, was appended
+INFO:root:total assets are 1.197177 BTC
+DEBUG:root:==============================
+INFO:root:the step is 146
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.8736750e-10 1.0884279e-33 1.5428327e-08
+ 1.6986460e-14 1.0000000e+00 1.5143664e-15 1.3433117e-10 1.3597171e-17
+ 2.9946259e-33 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0064873790867317
+DEBUG:root:a new experience, indexed by 2365, was appended
+INFO:root:total assets are 1.204944 BTC
+DEBUG:root:==============================
+INFO:root:the step is 147
+DEBUG:root:the raw omega is [0.0000000e+00 1.0574880e-31 1.8801756e-03 5.7662170e-26 1.0063788e-01
+ 2.4806957e-07 1.5112659e-02 3.7791730e-09 8.8236898e-01 7.6218259e-10
+ 2.4486162e-30 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9819604136963642
+DEBUG:root:a new experience, indexed by 2366, was appended
+INFO:root:total assets are 1.183207 BTC
+DEBUG:root:==============================
+INFO:root:the step is 148
+DEBUG:root:the raw omega is [0.00000000e+00 0.00000000e+00 5.72105406e-13 4.96601863e-24
+ 2.15068566e-12 1.20131466e-11 3.41438909e-19 3.06169884e-13
+ 1.00000000e+00 1.31666825e-15 1.46788205e-28 0.00000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9976522689112579
+DEBUG:root:a new experience, indexed by 2367, was appended
+INFO:root:total assets are 1.180429 BTC
+DEBUG:root:==============================
+INFO:root:the step is 149
+DEBUG:root:the raw omega is [0.00000000e+00 0.00000000e+00 8.90642837e-11 3.89763433e-24
+ 1.44596002e-09 1.06546146e-07 1.63915387e-12 0.00000000e+00
+ 9.99999881e-01 9.71752267e-20 0.00000000e+00 0.00000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9848050363841926
+DEBUG:root:a new experience, indexed by 2368, was appended
+INFO:root:total assets are 1.162492 BTC
+DEBUG:root:==============================
+INFO:root:the step is 150
+DEBUG:root:the raw omega is [0.000000e+00 0.000000e+00 2.500952e-23 2.662230e-30 5.027487e-25
+ 8.480208e-12 8.812271e-27 0.000000e+00 1.000000e+00 7.209061e-36
+ 0.000000e+00 0.000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9986861342828309
+DEBUG:root:a new experience, indexed by 2369, was appended
+INFO:root:total assets are 1.160965 BTC
+DEBUG:root:==============================
+INFO:root:the step is 151
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 9.8748287e-31 0.0000000e+00 1.6148227e-30
+ 2.5401646e-21 8.3662374e-27 0.0000000e+00 1.0000000e+00 0.0000000e+00
+ 0.0000000e+00 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0086032152148625
+DEBUG:root:a new experience, indexed by 2370, was appended
+INFO:root:total assets are 1.170953 BTC
+DEBUG:root:==============================
+INFO:root:the step is 152
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.4572807e-14 4.0804230e-22 4.2757562e-15
+ 4.7934922e-18 3.1680067e-08 0.0000000e+00 1.0000000e+00 6.6616460e-29
+ 1.3628263e-34 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9807322342099792
+DEBUG:root:a new experience, indexed by 2371, was appended
+INFO:root:total assets are 1.148391 BTC
+DEBUG:root:==============================
+INFO:root:the step is 153
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.4466749e-20 0.0000000e+00 4.7441027e-33
+ 1.9418742e-24 4.7413720e-25 0.0000000e+00 1.0000000e+00 5.3416116e-34
+ 5.6568846e-35 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0173261163977843
+DEBUG:root:a new experience, indexed by 2372, was appended
+INFO:root:total assets are 1.168289 BTC
+DEBUG:root:==============================
+INFO:root:the step is 154
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 1.1045962e-07 0.0000000e+00 1.6715164e-18
+ 5.7825266e-15 4.4551088e-10 0.0000000e+00 9.9999988e-01 6.0998232e-19
+ 4.2716669e-21 1.1596157e-33]
+DEBUG:root:the portfolio change this period is : 0.9947491202455205
+DEBUG:root:a new experience, indexed by 2373, was appended
+INFO:root:total assets are 1.162154 BTC
+DEBUG:root:==============================
+INFO:root:the step is 155
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 5.4493023e-07 1.2099704e-32 1.8540687e-13
+ 7.1806194e-22 9.2031017e-27 0.0000000e+00 9.9999940e-01 1.7059869e-17
+ 3.0238295e-24 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0010988270576469
+DEBUG:root:a new experience, indexed by 2374, was appended
+INFO:root:total assets are 1.163431 BTC
+DEBUG:root:==============================
+INFO:root:the step is 156
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 5.9077403e-24 8.0448032e-29 1.6795500e-19
+ 1.0574641e-08 0.0000000e+00 0.0000000e+00 1.0000000e+00 1.0150226e-24
+ 7.7320504e-26 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.997818358623585
+DEBUG:root:a new experience, indexed by 2375, was appended
+INFO:root:total assets are 1.160893 BTC
+DEBUG:root:==============================
+INFO:root:the step is 157
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 3.0369634e-24 0.0000000e+00 2.8384509e-23
+ 1.9458437e-14 0.0000000e+00 0.0000000e+00 1.0000000e+00 2.9782012e-31
+ 1.5133388e-22 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.020326852744385
+DEBUG:root:a new experience, indexed by 2376, was appended
+INFO:root:total assets are 1.184490 BTC
+DEBUG:root:==============================
+INFO:root:the step is 158
+DEBUG:root:the raw omega is [0.0000000e+00 2.3258223e-34 6.4160247e-11 2.6533890e-03 1.0778540e-07
+ 9.9734616e-01 6.5110883e-29 0.0000000e+00 3.0544453e-07 3.5414365e-21
+ 2.6379920e-15 7.3522060e-30]
+DEBUG:root:the portfolio change this period is : 0.9945918547348294
+DEBUG:root:a new experience, indexed by 2377, was appended
+INFO:root:total assets are 1.178084 BTC
+DEBUG:root:==============================
+INFO:root:the step is 159
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 2.2853729e-25 1.0000000e+00 1.4105391e-21
+ 3.5015773e-12 1.3099071e-27 0.0000000e+00 2.3291868e-09 1.9317463e-30
+ 5.7446832e-32 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0011278206411809
+DEBUG:root:a new experience, indexed by 2378, was appended
+INFO:root:total assets are 1.179413 BTC
+DEBUG:root:==============================
+INFO:root:the step is 160
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 9.0154976e-28 1.0000000e+00 2.7188115e-22
+ 1.4898569e-18 1.6225956e-24 0.0000000e+00 6.5278477e-12 5.4302606e-28
+ 1.2687972e-19 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0016940831184904
+DEBUG:root:a new experience, indexed by 2379, was appended
+INFO:root:total assets are 1.181411 BTC
+DEBUG:root:==============================
+INFO:root:the step is 161
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 0.0000000e+00 1.0000000e+00 6.1777109e-26
+ 3.8714743e-27 4.1385557e-27 0.0000000e+00 1.0631153e-14 5.4179393e-24
+ 1.5256220e-21 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 0.9898484945292322
+DEBUG:root:a new experience, indexed by 2380, was appended
+INFO:root:total assets are 1.169418 BTC
+DEBUG:root:==============================
+INFO:root:the step is 162
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 0.0000000e+00 1.0000000e+00 9.8464769e-29
+ 3.9628263e-29 4.3769692e-30 0.0000000e+00 3.1033389e-19 8.5987967e-31
+ 4.7388659e-22 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0011641979217503
+DEBUG:root:a new experience, indexed by 2381, was appended
+INFO:root:total assets are 1.170779 BTC
+DEBUG:root:==============================
+INFO:root:the step is 163
+DEBUG:root:the raw omega is [0.0000000e+00 0.0000000e+00 9.6662450e-35 1.0000000e+00 2.7283046e-24
+ 3.1601051e-28 5.1363167e-32 0.0000000e+00 1.1170705e-16 9.5046477e-31
+ 2.7338639e-12 0.0000000e+00]
+DEBUG:root:the portfolio change this period is : 1.0065189600018318
+DEBUG:root:a new experience, indexed by 2382, was appended
+INFO:root:total assets are 1.178412 BTC
+DEBUG:root:==============================
