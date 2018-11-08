@@ -1,0 +1,1 @@
+python C:\Users\Ido\PycharmProjects\Crypto\Reddit_crawler.py -startTime 1433116800 -endTime 1496275200 -subreddits BytecoinBCN,NavCoin,counterparty_xcp,NXT,lbry
