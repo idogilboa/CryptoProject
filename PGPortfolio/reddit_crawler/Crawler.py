@@ -2,14 +2,13 @@
 
 import sys
 import argparse
-import pymysql
 import urllib2
 import json
 import sqlite3
 import datetime
 import os
 
-globals()['DATABASE_DIR'] = os.path.realpath("./database/Data.db")
+globals()['DATABASE_DIR'] = os.path.realpath("../database/Data.db")
 
 
 def init():
