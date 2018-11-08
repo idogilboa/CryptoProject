@@ -1,0 +1,2 @@
+Select t.id,h.coin,h.date from Threads as t History as h 
+where h.coin == t.coin and  h.date < t.date < h.date + Epsilon
