@@ -26,16 +26,16 @@ DROP TABLE IF EXISTS `comments`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comments` (
   `key` int(11) NOT NULL AUTO_INCREMENT,
-  `author` varchar(45) DEFAULT NULL,
+  `author` varchar(60) DEFAULT NULL,
   `created_utc` datetime DEFAULT NULL,
   `body` varchar(1000) DEFAULT NULL,
-  `thread` varchar(45) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
-  `subreddit` varchar(45) DEFAULT NULL,
+  `subreddit` varchar(100) DEFAULT NULL,
   `parent_id` varchar(45) DEFAULT NULL,
   `id` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=339 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`key`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14060 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,14 +65,14 @@ DROP TABLE IF EXISTS `threads`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `threads` (
-  `subreddit` varchar(45) DEFAULT NULL,
+  `subreddit` varchar(100) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
   `num_comments` int(11) DEFAULT NULL,
-  `selftext` varchar(2000) DEFAULT NULL,
-  `title` varchar(200) DEFAULT NULL,
+  `selftext` varchar(4000) DEFAULT NULL,
+  `title` varchar(500) DEFAULT NULL,
   `created_utc` datetime DEFAULT NULL,
-  `author` varchar(45) DEFAULT NULL,
-  `full_link` varchar(200) DEFAULT NULL,
+  `author` varchar(60) DEFAULT NULL,
+  `full_link` varchar(750) DEFAULT NULL,
   `id` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `thread_id_UNIQUE` (`id`)
@@ -88,4 +88,4 @@ CREATE TABLE `threads` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 11:11:59
+-- Dump completed on 2018-11-08 15:35:11
