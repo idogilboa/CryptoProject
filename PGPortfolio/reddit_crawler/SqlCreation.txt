@@ -1,2 +1,12 @@
 Select t.id,h.coin,h.date from Threads as t History as h 
 where h.coin == t.coin and  h.date < t.date < h.date + Epsilon
+
+        cursor.execute('CREATE TABLE IF NOT EXISTS HistToComments (date INTEGER,'
+                       ' coin varchar(20),'
+                       ' commentId varchar(45),'
+                       ' PRIMARY KEY (commentId));')    
+
+        cursor.execute('CREATE TABLE IF NOT EXISTS HistToThreads (date INTEGER,'
+                       ' coin varchar(20),'
+                       ' threadId varchar(45),'
+                       ' PRIMARY KEY (threadId));')
