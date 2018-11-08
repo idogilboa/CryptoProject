@@ -19,10 +19,8 @@ def init():
 
     # arguments setup
     parser = argparse.ArgumentParser(description='Reddit crawler.')
-    parser.add_argument('-subreddit', help='subreddit name')
     parser.add_argument('-startTime', help='epoch start time')
     parser.add_argument('-endTime', help='epoch end time')
-    parser.add_argument('-subreddits', help = 'list of subreddits comma seperated')
     globals()['args'] = parser.parse_args()
     createTables()
     # Connection setup
@@ -154,20 +152,48 @@ def getSubredditComments(subreddit, startTime, endTime):
         commentsData.extend(dataSlice)
 
 
+SUBREDDITS = {
+    "BCN" : ["BytecoinBCN"],
+    "NAV" : ["NavCoin"],
+    "XCP" : ["counterparty_xcp"],
+    "NXT" : ["NXT"],
+    "LBC" : ["lbry"],
+    "REP" : ["Augur"],
+    "PASC": ["pascalcoin"],
+    "BCH" : ["Bitcoincash"],
+    "CVC" : ["civicplatform"],
+    "NEO" : ["NEO"],
+    "GAS" : ["NEO"],
+    "EOS" : ["eos"],
+    "SNT" : ["statusim"],
+    "BAT" : ["BATProject"],
+    "LOOM": ["loomnetwork"],
+    "QTUM": ["Qtum"],
+    "BNT" : ["Bancor"],
+    "XRP" : ["Ripple,XRP"],
+    "LTC" : ["litecoin", "LitecoinMarkets"],
+    "ALL" : ["CryptoCurrency", "CryptoMarkets"]
+}
 
-def main(arguments):
+def fetchAllRedditData(startTime, endTime):
+    for coin, subs in SUBREDDITS.iteritems():
+        for subreddit in subs:
+            print("Fetching {}:{}".format(coin, subreddit))
+            getSubredditThreads(subreddit, startTime, endTime)
+            updateThreadsTable()
+            getSubredditComments(subreddit, startTime, endTime)
+            updateCommentsTable()
+            globals()['threadsData'] = []
+            globals()['commentsData'] = []
+
+
+def main():
     globals()['conn'] = sqlite3.connect(DATABASE_DIR)
     globals()['cur'] = conn.cursor()
     init()
-    for subreddit in args.subreddits.split(","):
-        getSubredditThreads(subreddit, args.startTime, args.endTime)
-        updateThreadsTable()
-        getSubredditComments(subreddit, args.startTime, args.endTime)
-        updateCommentsTable()
-        globals()['threadsData'] = []
-        globals()['commentsData'] = []
+    fetchAllRedditData(args.startTime, args.endTime)
     conn.close()
 
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv[1:]))
+    sys.exit(main())
