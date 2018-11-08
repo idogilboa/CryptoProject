@@ -5,7 +5,12 @@ import argparse
 import pymysql
 import urllib2
 import json
+import sqlite3
 import datetime
+import os
+
+globals()['DATABASE_DIR'] = os.path.realpath("./database/Data.db")
+
 
 def init():
     # globals setup
@@ -19,19 +24,43 @@ def init():
     parser.add_argument('-startTime', help='epoch start time')
     parser.add_argument('-endTime', help='epoch end time')
     parser.add_argument('-subreddits', help = 'list of subreddits comma seperated')
-
     globals()['args'] = parser.parse_args()
-
+    createTables()
     # Connection setup
-    globals()['conn'] = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='reddit',
-                                        charset='utf8')
-    globals()['cur'] = conn.cursor()
+    # globals()['conn'] = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='reddit',charset='utf8')
+    # globals()['cur'] = conn.cursor()
 
+def createTables():
+    with sqlite3.connect(DATABASE_DIR) as connection:
+        cursor = connection.cursor()
+
+        cursor.execute('CREATE TABLE IF NOT EXISTS Threads (date INTEGER,'
+                       ' created_utc datetime,'
+                       ' subreddit varchar(100),'
+                       ' score INTEGER,'
+                       ' author varchar(60),'
+                       ' num_comments INTEGER,'
+                       ' title varchar(500),'
+                       ' selftext varchar(4000),'
+                       ' full_link varchar(750),'
+                       ' id varchar(45),'
+                       'PRIMARY KEY (id));')
+
+        cursor.execute('CREATE TABLE IF NOT EXISTS Comments (date INTEGER,'
+                       ' created_utc datetime,'
+                       ' subreddit varchar(100),'
+                       ' score INTEGER,'
+                       ' author varchar(60),'
+                       ' body varchar(1000),'
+                       ' parent_id varchar(45),'
+                       ' id varchar(45),'
+                       'PRIMARY KEY (id));')
+
+        connection.commit()
 
 def updateThreadsTable():
-    params = ['author', 'created_utc', 'full_link', 'num_comments', 'score', 'selftext', 'subreddit', 'title', 'id']
+    params = ['author', 'created_utc','date', 'full_link', 'num_comments', 'score', 'selftext', 'subreddit', 'title', 'id']
     colsText = ', '.join(params)
-    baseQuery = "INSERT INTO reddit.threads ({colsText}) values ({colsData})"
     for elem in threadsData:
         try:
             colsData = []
@@ -39,28 +68,26 @@ def updateThreadsTable():
                 if param not in elem:
                     elem[param] = "NA"
                 if param == 'created_utc':
-                    elem[param] = datetime.datetime.fromtimestamp(float(elem[param])).strftime('%y/%m/%d %H:%M:%S')
+                    elem['date'] = elem[param]
+                    elem[param] = datetime.datetime.fromtimestamp(float(elem[param])).strftime('%d/%m/%y %H:%M:%S')
                 colsData.append(elem[param])
 
-            colsData = str(colsData).strip('[').strip(']').replace("u'", "'").replace("u\"","\"")
-            query = baseQuery.format(colsText=colsText, colsData=colsData)
+            query = "INSERT INTO Threads ({colsText}) values (" + "".join(["?, " for i in range(len(params)-1)]) + "?)"
+            query = query.format(colsText=colsText)
         except KeyError as e:
             print "KeyError - updateThreadTable"
             continue
 
         try:
-            cur.execute(query)
+            cur.execute(query, tuple(colsData))
             conn.commit()
         except Exception as e:
             print "SQLError - updateThreadTable - {}".format(e)
             continue
 
-
 def updateCommentsTable():
-    params = ['author', 'created_utc', 'body', 'score', 'subreddit', 'id', 'parent_id']
+    params = ['author', 'created_utc','date', 'body', 'score', 'subreddit', 'id', 'parent_id']
     colsText = ', '.join(params)
-
-    baseQuery = "INSERT INTO reddit.comments ({colsText}) values ({colsData})"
     for elem in commentsData:
         for param in params:
             if param not in elem:
@@ -71,21 +98,17 @@ def updateCommentsTable():
             colsData = []
             for param in params:
                 if param == 'created_utc':
-                    elem[param] = datetime.datetime.fromtimestamp(int(elem[param])).strftime('%y/%m/%d %H:%M:%S')
-                # if param == 'thread':
-                #     elem['thread'] = elem['permalink'].split("/")[5] if elem['permalink'] != "NA" else "NA"
-                #     colsData.append(elem['thread'])
-                #     continue
+                    elem['date'] = elem[param]
+                    elem[param] = datetime.datetime.fromtimestamp(int(elem[param])).strftime('%d/%m/%y %H:%M:%S')
                 colsData.append(elem[param])
-            colsData = str(colsData).strip('[').strip(']').replace("u'", "'").replace("u\"","\"")
-            query = baseQuery.format(colsText=colsText, colsData=colsData)
+            query = "INSERT INTO Comments ({colsText}) values (" + "".join(["?, " for i in range(len(params)-1)]) + "?)"
+            query = query.format(colsText=colsText)
         except KeyError as e:
             print "KeyError - updateCommentsTable"
-            print e
             continue
 
         try:
-            cur.execute(query)
+            cur.execute(query, tuple(colsData))
             conn.commit()
         except Exception as e:
             print "SQLError - updateThreadTable - {}".format(e)
@@ -113,7 +136,6 @@ def getSubredditThreads(subreddit, startTime, endTime):
         after = dataSlice[length - 1]['created_utc']
         threadsData.extend(dataSlice)
 
-
 def getSubredditComments(subreddit, startTime, endTime):
     length = 500
     after = startTime
@@ -135,6 +157,8 @@ def getSubredditComments(subreddit, startTime, endTime):
 
 
 def main(arguments):
+    globals()['conn'] = sqlite3.connect(DATABASE_DIR)
+    globals()['cur'] = conn.cursor()
     init()
     for subreddit in args.subreddits.split(","):
         getSubredditThreads(subreddit, args.startTime, args.endTime)
@@ -143,7 +167,6 @@ def main(arguments):
         updateCommentsTable()
         globals()['threadsData'] = []
         globals()['commentsData'] = []
-    cur.close()
     conn.close()
 
 
