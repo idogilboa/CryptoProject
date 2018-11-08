@@ -7,7 +7,6 @@ import urllib2
 import json
 import datetime
 
-
 def init():
     # globals setup
     globals()['commentsDepth'] = 2
@@ -40,7 +39,7 @@ def updateThreadsTable():
                 if param not in elem:
                     elem[param] = "NA"
                 if param == 'created_utc':
-                    elem[param] = datetime.datetime.fromtimestamp(int(elem[param])).strftime('%y/%m/%d %H:%M:%S')
+                    elem[param] = datetime.datetime.fromtimestamp(float(elem[param])).strftime('%y/%m/%d %H:%M:%S')
                 colsData.append(elem[param])
 
             colsData = str(colsData).strip('[').strip(']').replace("u'", "'").replace("u\"","\"")
@@ -134,15 +133,16 @@ def getSubredditComments(subreddit, startTime, endTime):
         commentsData.extend(dataSlice)
 
 
+
 def main(arguments):
     init()
-    for subreddit in args.subreddits:
+    for subreddit in args.subreddits.split(","):
         getSubredditThreads(subreddit, args.startTime, args.endTime)
         updateThreadsTable()
         getSubredditComments(subreddit, args.startTime, args.endTime)
         updateCommentsTable()
-        threadsData = []
-        commentsData = []
+        globals()['threadsData'] = []
+        globals()['commentsData'] = []
     cur.close()
     conn.close()
 
