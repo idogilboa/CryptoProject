@@ -49,7 +49,7 @@ class Poloniex:
         """
         if command in PUBLIC_COMMANDS:
             url = 'https://poloniex.com/public?'
-            # args['command'] = command
+            args['command'] = command
             ret = urlopen(Request(url + urlencode(args)))
             return json.loads(ret.read().decode(encoding='UTF-8'))
         else:
