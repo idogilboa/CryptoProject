@@ -2,33 +2,16 @@
 
 import sys
 import argparse
-import urllib2
-import json
+import requests
 import sqlite3
 import datetime
 import os
 
-globals()['DATABASE_DIR'] = os.path.realpath("../database/Data.db")
+globals()['DATABASE_DIR'] = os.path.join(os.path.dirname(__file__), "../database/Data.db")
 
-
-def init():
-    # globals setup
-    globals()['commentsDepth'] = 2
-    globals()['threadsData'] = []
-    globals()['commentsData'] = []
-
-    # arguments setup
-    parser = argparse.ArgumentParser(description='Reddit crawler.')
-    parser.add_argument('-startTime', help='epoch start time')
-    parser.add_argument('-endTime', help='epoch end time')
-    globals()['args'] = parser.parse_args()
-    createTables()
-    # Connection setup
-    # globals()['conn'] = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='root', db='reddit',charset='utf8')
-    # globals()['cur'] = conn.cursor()
 
 def createTables():
-    with sqlite3.connect(DATABASE_DIR) as connection:
+    with sqlite3.connect(globals()['DATABASE_DIR']) as connection:
         cursor = connection.cursor()
 
         cursor.execute('CREATE TABLE IF NOT EXISTS Threads (date INTEGER,'
@@ -55,10 +38,11 @@ def createTables():
 
         connection.commit()
 
+
 def updateThreadsTable():
     params = ['author', 'created_utc','date', 'full_link', 'num_comments', 'score', 'selftext', 'subreddit', 'title', 'id']
     colsText = ', '.join(params)
-    for elem in threadsData:
+    for elem in globals()['threadsData']:
         try:
             colsData = []
             for param in params:
@@ -72,20 +56,21 @@ def updateThreadsTable():
             query = "INSERT INTO Threads ({colsText}) values (" + "".join(["?, " for i in range(len(params)-1)]) + "?)"
             query = query.format(colsText=colsText)
         except KeyError as e:
-            print "KeyError - updateThreadTable"
+            print("updateThreadTable::", e)
             continue
 
         try:
-            cur.execute(query, tuple(colsData))
-            conn.commit()
+            globals()['cur'].execute(query, tuple(colsData))
+            globals()['conn'].commit()
         except Exception as e:
-            print "SQLError - updateThreadTable - {}".format(e)
+            print("updateThreadTable::", e)
             continue
+
 
 def updateCommentsTable():
     params = ['author', 'created_utc','date', 'body', 'score', 'subreddit', 'id', 'parent_id']
     colsText = ', '.join(params)
-    for elem in commentsData:
+    for elem in globals()['commentsData']:
         for param in params:
             if param not in elem:
                 elem[param] = "NA"
@@ -101,82 +86,87 @@ def updateCommentsTable():
             query = "INSERT INTO Comments ({colsText}) values (" + "".join(["?, " for i in range(len(params)-1)]) + "?)"
             query = query.format(colsText=colsText)
         except KeyError as e:
-            print "KeyError - updateCommentsTable"
+            print("updateCommentsTable::", e)
             continue
 
         try:
-            cur.execute(query, tuple(colsData))
-            conn.commit()
+            globals()['cur'].execute(query, tuple(colsData))
+            globals()['conn'].commit()
         except Exception as e:
-            print "SQLError - updateThreadTable - {}".format(e)
+            print("updateCommentsTable::", e)
             continue
 
 
 def getSubredditThreads(subreddit, startTime, endTime):
     length = 500
     after = startTime
-    before = endTime
-    hdr = {'User-Agent': 'TheCryptoProject:windows10'}
 
     # https://github.com/pushshift/api
     url = "https://api.pushshift.io/reddit/search/submission/?subreddit={subreddit}&after={after}&before={before}&size=500"
-    while (length == 500):
-        print "Sending Threads request"
-        req = urllib2.Request(url.format(subreddit=subreddit, after=after, before=before), headers=hdr)
-        response = urllib2.urlopen(req)
-        jsonFile = response.read()
-        dataSlice = json.loads(jsonFile)['data']
+    while length == 500:
+        print("Sending Threads request")
+        req = requests.get(url.format(subreddit=subreddit, after=int(after), before=int(endTime)))
+        dataSlice = req.json()['data']
         length = len(dataSlice)
         if length == 0:
-            print "No information from requetsed dates was found"
-            exit(0)
+            print("No data found in %s" % subreddit)
+            return
         after = dataSlice[length - 1]['created_utc']
-        threadsData.extend(dataSlice)
+        globals()['threadsData'].extend(dataSlice)
+
 
 def getSubredditComments(subreddit, startTime, endTime):
     length = 500
     after = startTime
-    before = endTime
-    hdr = {'User-Agent': 'TheCryptoProject:windows10'}
 
     # https://github.com/pushshift/api
     url = "https://api.pushshift.io/reddit/search/comment/?subreddit={subreddit}&after={after}&before={before}&size=500"
-    while (length == 500):
-        print "Sending comments request"
-        req = urllib2.Request(url.format(subreddit=subreddit, after=after, before=before), headers=hdr)
-        response = urllib2.urlopen(req)
-        jsonFile = response.read()
-        dataSlice = json.loads(jsonFile)['data']
+    while length == 500:
+        print("Sending comments request")
+        req = requests.get(url.format(subreddit=subreddit, after=int(after), before=int(endTime)))
+        dataSlice = req.json()['data']
         length = len(dataSlice)
+        if length == 0:
+            print("No data found in %s" % subreddit)
+            return
         after = dataSlice[length - 1]['created_utc']
-        commentsData.extend(dataSlice)
+        globals()['commentsData'].extend(dataSlice)
 
 
 SUBREDDITS = {
-    "BCN" : ["BytecoinBCN"],
-    "NAV" : ["NavCoin"],
-    "XCP" : ["counterparty_xcp"],
-    "NXT" : ["NXT"],
-    "LBC" : ["lbry"],
-    "REP" : ["Augur"],
+    "BCN": ["BytecoinBCN"],
+    "NAV": ["NavCoin"],
+    "XCP": ["counterparty_xcp"],
+    "NXT": ["NXT"],
+    "LBC": ["lbry"],
+    "REP": ["Augur"],
     "PASC": ["pascalcoin"],
-    "BCH" : ["Bitcoincash"],
-    "CVC" : ["civicplatform"],
-    "NEO" : ["NEO"],
-    "GAS" : ["NEO"],
-    "EOS" : ["eos"],
-    "SNT" : ["statusim"],
-    "BAT" : ["BATProject"],
+    "BCH": ["Bitcoincash"],
+    "CVC": ["civicplatform"],
+    "NEO": ["NEO"],
+    "GAS": ["NEO"],
+    "EOS": ["eos"],
+    "SNT": ["statusim"],
+    "BAT": ["BATProject"],
     "LOOM": ["loomnetwork"],
     "QTUM": ["Qtum"],
-    "BNT" : ["Bancor"],
-    "XRP" : ["Ripple,XRP"],
-    "LTC" : ["litecoin", "LitecoinMarkets"],
-    "ALL" : ["CryptoCurrency", "CryptoMarkets"]
+    "BNT": ["Bancor"],
+    "XRP": ["Ripple,XRP"],
+    "LTC": ["litecoin", "LitecoinMarkets"]
+    # "ALL" : ["CryptoCurrency", "CryptoMarkets"]
 }
 
+
 def fetchAllRedditData(startTime, endTime):
-    for coin, subs in SUBREDDITS.iteritems():
+    globals()['commentsDepth'] = 2
+    globals()['threadsData'] = []
+    globals()['commentsData'] = []
+    globals()['conn'] = sqlite3.connect(globals()['DATABASE_DIR'])
+    globals()['cur'] = globals()['conn'].cursor()
+
+    createTables()
+
+    for coin, subs in SUBREDDITS.items():
         for subreddit in subs:
             print("Fetching {}:{}".format(coin, subreddit))
             getSubredditThreads(subreddit, startTime, endTime)
@@ -185,14 +175,15 @@ def fetchAllRedditData(startTime, endTime):
             updateCommentsTable()
             globals()['threadsData'] = []
             globals()['commentsData'] = []
+    globals()['conn'].close()
 
 
 def main():
-    globals()['conn'] = sqlite3.connect(DATABASE_DIR)
-    globals()['cur'] = conn.cursor()
-    init()
-    fetchAllRedditData(args.startTime, args.endTime)
-    conn.close()
+    parser = argparse.ArgumentParser(description='Reddit crawler.')
+    parser.add_argument('-startTime', help='epoch start time')
+    parser.add_argument('-endTime', help='epoch end time')
+    globals()['args'] = parser.parse_args()
+    fetchAllRedditData(globals()['args'].startTime, globals()['args'].endTime)
 
 
 if __name__ == '__main__':
