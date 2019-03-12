@@ -11,7 +11,8 @@ from pgportfolio.tools.configprocess import load_config
 from pgportfolio.tools.trade import save_test_data
 from pgportfolio.tools.shortcut import execute_backtest
 from pgportfolio.resultprocess import plot
-from reddit_crawler import crawler
+from reddit_crawler.crawler import Crawler
+
 
 def build_parser():
     parser = ArgumentParser()
@@ -79,6 +80,7 @@ def main():
                      is_permed=config["input"]["is_permed"],
                      test_portion=config["input"]["test_portion"],
                      portion_reversed=config["input"]["portion_reversed"])
+        crawler = Crawler()
         crawler.fetchAllRedditData(start, end)
     elif options.mode == "backtest":
         config = _config_by_algo(options.algo)
@@ -104,6 +106,7 @@ def main():
         else:
             labels = algos
         plot.table_backtest(load_config(), algos, labels, format=options.format)
+
 
 def _set_logging_by_algo(console_level, file_level, algo, name):
     if algo.isdigit():
