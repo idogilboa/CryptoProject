@@ -30,9 +30,10 @@ SUBREDDITS = {
     "LOOM": ["loomnetwork"],
     "QTUM": ["Qtum"],
     "BNT": ["Bancor"],
-    "XRP": ["Ripple,XRP"],
+    "XRP": ["Ripple", "XRP"],
     "LTC": ["litecoin", "LitecoinMarkets"],
     "XMR": ["monero"],
+    "DASH": ["dashpay"],
 }
 
 COINS_KEYWORDS = {
@@ -44,7 +45,7 @@ COINS_KEYWORDS = {
     "REP": ["Augur", "REP"],
     "PASC": ["pascalcoin", "PASC", "pascal coin", "pascal"],
     "BCH": ["Bitcoincash", "BCH", "bitcoin cash"],
-    "CVC": ["civicplatform", "civic"],
+    "CVC": ["CVC", "civicplatform", "civic"],
     "NEO": ["NEO"],
     "GAS": ["GAS"],
     "EOS": ["EOS"],
@@ -56,7 +57,9 @@ COINS_KEYWORDS = {
     "XRP": ["Ripple", "XRP", "ripple"],
     "LTC": ["litecoin", "LitecoinMarkets", "LTC", "lite coin"],
     "BTC": ["BTC", "Bitcoin", "bit coin"],
-    "ETH": ["ETH", "ethereum", "ether"]
+    "ETH": ["ETH", "ethereum", "ether"],
+    "XMR": ["XMR", "monero"],
+    "DASH": ["DASH"],
 }
 
 
@@ -70,8 +73,19 @@ class CrawlerDB:
         coins = []
         for coin in COINS_KEYWORDS:
             for keyword in COINS_KEYWORDS[coin]:
-                if re.search("(^|\s)({})($|\W|\s)".format(keyword.upper()),text.upper()):
+                if re.search("(^|\s)({})($|\W|\s)".format(keyword.upper()), text.upper()):
                     coins.append(coin)
+
+        # hack because bitcoin is substring of "bitcoin cash"
+        if "BCH" in coins:
+            mod_text = text.upper()
+            for keyword in COINS_KEYWORDS["BCH"]:
+                mod_text = "".join(mod_text.split(keyword))
+            coins.remove("BTC")
+            for keyword in COINS_KEYWORDS["BTC"]:
+                if re.search("(^|\s)({})($|\W|\s)".format(keyword.upper()), mod_text):
+                    coins.append("BTC")
+
         coins = coins if len(coins) > 0 else ['Unknown']
         return coins
 
