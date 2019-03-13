@@ -17,7 +17,7 @@ SUBREDDITS = {
     "NXT": ["NXT"],
     "LBC": ["lbry"],
     "BTC": ["btc", "bitcoin"],
-    "ETH": ["ethereum", "ethtrader","ethtraderpro"],
+    "ETH": ["ethereum", "ethtrader", "ethtraderpro"],
     "REP": ["Augur"],
     "PASC": ["pascalcoin"],
     "BCH": ["Bitcoincash"],
@@ -33,10 +33,32 @@ SUBREDDITS = {
     "XRP": ["Ripple,XRP"],
     "LTC": ["litecoin", "LitecoinMarkets"],
     "XMR": ["monero"],
-
 }
- # s = "asdasdasd great!"
- # polarity, subjectivity = TextBlob(s).sentiment
+
+COINS_KEYWORDS = {
+    "BCN": ["Bytecoin", " BCN ", "byte coin"],
+    "NAV": ["NavCoin", " NAV ", "nav coin"],
+    "XCP": ["counterparty_xcp", "XCP"],
+    "NXT": ["NXT", "Nxtcoin", "Nextcoin"],
+    "LBC": ["lbry", "LBRY", "LBC"],
+    "REP": ["Augur", "REP"],
+    "PASC": ["pascalcoin", "PASC", "pascal coin", "pascal"],
+    "BCH": ["Bitcoincash", "BCH", "bitcoin cash"],
+    "CVC": ["civicplatform", "civic"],
+    "NEO": ["NEO"],
+    "GAS": ["GAS"],
+    "EOS": ["EOS"],
+    "SNT": ["statusim", "SNT"],
+    "BAT": ["BATProject", "BAT"],
+    "LOOM": ["loomnetwork", "LOOM", "loomnet work"],
+    "QTUM": ["QTUM"],
+    "BNT": ["Bancor", "BNT"],
+    "XRP": ["Ripple", "XRP", "ripple"],
+    "LTC": ["litecoin", "LitecoinMarkets", "LTC", "lite coin"],
+    "BTC": ["BTC", "Bitcoin", "bit coin"],
+    "ETH": ["ETH", "ethereum", "ether"]
+}
+
 
 class CrawlerDB:
 
@@ -45,32 +67,9 @@ class CrawlerDB:
         self.create_tables()
 
     def guess_coin(self, text):
-        keywords = {
-            "BCN": ["Bytecoin"," BCN ", "byte coin", "Byte coin", "bytecoin"],
-            "NAV": ["NavCoin", " NAV ", "nav coin", "Nav coin", " nav "],
-            "XCP": ["counterparty_xcp", "XCP"],
-            "NXT": ["NXT","Nxtcoin", "Nextcoin"],
-            "LBC": ["lbry","LBRY", "LBC"],
-            "REP": ["Augur", "REP"],
-            "PASC": ["pascalcoin", "PASC", "pascal coin", "Pascal coin", "Pascal", "pascal"],
-            "BCH": ["Bitcoincash", "BCH", "Bitcoin cash", "bitcoin cash"],
-            "CVC": ["civicplatform", "Civic", "civic"],
-            "NEO": ["NEO", "neo", "Neo"],
-            "GAS": ["GAS","gas","Gas"],
-            "EOS": ["eos", "EOS", "Eos"],
-            "SNT": ["statusim", "SNT", "Statusim"],
-            "BAT": ["BATProject", "BAT"],
-            "LOOM": ["loomnetwork", "LOOM", "loomnet work", "Loomnet work"],
-            "QTUM": ["Qtum", "QTUM"],
-            "BNT": ["Bancor", "BNT"],
-            "XRP": ["Ripple","XRP", "ripple"],
-            "LTC": ["litecoin", "LitecoinMarkets", "LTC", "lite coin", "Lite coin"],
-            "BTC": ["BTC", "Bitcoin", "BitCoin", "bit coin", "Bit coin"],
-            "ETH": ["ETH", "ethereum", "ether"]
-        }
         coins = []
-        for coin in keywords:
-            for keyword in keywords[coin]:
+        for coin in COINS_KEYWORDS:
+            for keyword in COINS_KEYWORDS[coin]:
                 if re.search("(^|\s)({})($|\W|\s)".format(keyword.upper()),text.upper()):
                     coins.append(coin)
         coins = coins if len(coins) > 0 else ['Unknown']
@@ -114,7 +113,8 @@ class CrawlerDB:
 
     def update_threads_table(self, threads_data, coin):
         params = ['author', 'created_utc', 'date', 'full_link', 'num_comments', 'score', 'selftext', 'subreddit',
-                  'coin', 'title', 'id','title_polarity','title_subjectivity','selftext_polarity', 'selftext_subjectivity']
+                  'coin', 'title', 'id', 'title_polarity', 'title_subjectivity', 'selftext_polarity',
+                  'selftext_subjectivity']
         cols_text = ', '.join(params)
 
         with sqlite3.connect(self.database_dir) as connection:
@@ -125,7 +125,8 @@ class CrawlerDB:
                     cols_data = []
                     for param in params:
                         if param == 'coin':
-                            elem['coin'] = [coin] if coin != 'ALL' else self.guess_coin(elem['selftext'] + elem['title'])
+                            elem['coin'] = [coin] if coin != 'ALL' else self.guess_coin(elem['selftext'] + " " +
+                                                                                        elem['title'])
                         if param == 'title':
                             elem['title_polarity'], elem['title_subjectivity'] = TextBlob(elem[param]).sentiment
                         if param == 'selftext':
@@ -156,7 +157,8 @@ class CrawlerDB:
             connection.commit()
 
     def update_comments_table(self, comments_data,coin):
-        params = ['author', 'created_utc', 'date', 'body', 'score', 'subreddit', 'coin', 'id', 'parent_id','polarity', 'subjectivity' ]
+        params = ['author', 'created_utc', 'date', 'body', 'score', 'subreddit', 'coin', 'id', 'parent_id', 'polarity',
+                  'subjectivity']
         cols_text = ', '.join(params)
 
         with sqlite3.connect(self.database_dir) as connection:
@@ -177,7 +179,8 @@ class CrawlerDB:
                             elem['polarity'], elem['subjectivity'] = TextBlob(elem[param]).sentiment
                         if param == 'created_utc':
                             elem['date'] = elem[param]
-                            elem[param] = datetime.datetime.fromtimestamp(int(elem[param])).strftime('%d/%m/%y %H:%M:%S')
+                            elem[param] = datetime.datetime.fromtimestamp(int(elem[param])).\
+                                strftime('%d/%m/%y %H:%M:%S')
                         cols_data.append(elem[param])
 
                 except KeyError as e:

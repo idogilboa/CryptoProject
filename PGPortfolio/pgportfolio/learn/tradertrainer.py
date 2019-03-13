@@ -109,7 +109,7 @@ class TraderTrainer:
 
         # print 'ouput is %s' % out
         logging.info('='*30)
-        logging.info('step %d' % step)
+        logging.info('step %d/%d' % (step, self.train_config["steps"]))
         logging.info('-'*30)
         if not fast_train:
             logging.info('training loss is %s\n' % loss_value)
