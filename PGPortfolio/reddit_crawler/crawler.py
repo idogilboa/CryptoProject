@@ -131,6 +131,9 @@ class CrawlerDB:
                   'selftext_subjectivity']
         cols_text = ', '.join(params)
 
+        if not threads_data:
+            return
+
         with sqlite3.connect(self.database_dir) as connection:
             cursor = connection.cursor()
 
@@ -171,10 +174,13 @@ class CrawlerDB:
 
             connection.commit()
 
-    def update_comments_table(self, comments_data,coin):
+    def update_comments_table(self, comments_data, coin):
         params = ['author', 'created_utc', 'date', 'body', 'score', 'subreddit', 'coin', 'id', 'parent_id', 'polarity',
                   'subjectivity']
         cols_text = ', '.join(params)
+
+        if not comments_data:
+            return
 
         with sqlite3.connect(self.database_dir) as connection:
             cursor = connection.cursor()
@@ -211,7 +217,6 @@ class CrawlerDB:
                         cols_data[params.index('coin')] = c
                         cols_data[params.index('id')] = cols_data[params.index('id')] + " - " + c
                         cursor.execute(query, tuple(cols_data))
-                    cursor.execute(query, tuple(cols_data))
                 except Exception as e:
                     print("updateCommentsTable::", e)
                     continue
