@@ -80,6 +80,12 @@ def main():
                      is_permed=config["input"]["is_permed"],
                      test_portion=config["input"]["test_portion"],
                      portion_reversed=config["input"]["portion_reversed"])
+    elif options.mode == "download_reddit":
+        with open("./pgportfolio/net_config.json") as file:
+            config = json.load(file)
+        config = preprocess_config(config)
+        start = time.mktime(datetime.strptime(config["input"]["start_date"], "%Y/%m/%d").timetuple())
+        end = time.mktime(datetime.strptime(config["input"]["end_date"], "%Y/%m/%d").timetuple())
         crawler = Crawler()
         crawler.fetchAllRedditData(start, end)
     elif options.mode == "backtest":

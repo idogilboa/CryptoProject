@@ -57,14 +57,30 @@ def pricenorm2d(m, reference_column,
 
 
 def get_chart_until_success(polo, pair, start, period, end):
-    is_connect_success = False
-    chart = {}
-    while not is_connect_success:
-        try:
-            chart = polo.marketChart(pair=pair, start=int(start), period=int(period), end=int(end))
-            is_connect_success = True
-        except Exception as e:
-            print(e)
+    print("Collecting Chart for Coin: %s" % pair[4:])
+    chart = []
+    while True:
+        is_connect_success = False
+        slice_end = start + 8000000
+        # For some reason, the first time slice data volume is always 0.
+        if slice_end >= end:
+            # print("pair-%s, start-%d, period-%d, end-%d" % (pair, int(start), int(period), int(end)))
+            while not is_connect_success:
+                try:
+                    chart += polo.marketChart(pair=pair, start=int(start), period=int(period), end=int(end))[1:]
+                    is_connect_success = True
+                except Exception as e:
+                    print(e)
+            break
+        # print("pair-%s, start-%d, slice-end-%d, period-%d, end-%d" % (pair, int(start), int(slice_end), int(period), int(end)))
+        while not is_connect_success:
+            try:
+                chart += polo.marketChart(pair=pair, start=int(start), period=int(period), end=int(slice_end))[1:]
+                is_connect_success = True
+            except Exception as e:
+                print(e)
+        start = slice_end
+
     return chart
 
 
