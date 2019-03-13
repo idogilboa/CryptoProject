@@ -124,6 +124,8 @@ class CrawlerDB:
                 try:
                     cols_data = []
                     for param in params:
+                        if param not in elem:
+                            elem[param] = "NA"
                         if param == 'coin':
                             elem['coin'] = [coin] if coin != 'ALL' else self.guess_coin(elem['selftext'] + " " +
                                                                                         elem['title'])
@@ -134,8 +136,6 @@ class CrawlerDB:
                         if param == 'created_utc':
                             elem['date'] = elem[param]
                             elem[param] = datetime.datetime.fromtimestamp(float(elem[param])).strftime('%d/%m/%y %H:%M:%S')
-                        if param not in elem:
-                            elem[param] = "NA"
                         cols_data.append(elem[param])
 
                 except KeyError as e:
@@ -149,7 +149,7 @@ class CrawlerDB:
                             ["?, " for i in range(len(params) - 1)]) + "?)"
                         query = query.format(cols_text=cols_text)
                         cols_data[params.index('coin')] = c
-                        cols_data[params.index('id')] = params.index('id') + " - " + c
+                        cols_data[params.index('id')] = cols_data[params.index('id')] + " - " + c
                         cursor.execute(query, tuple(cols_data))
                 except Exception as e:
                     print("updateThreadTable::", e)
@@ -195,7 +195,7 @@ class CrawlerDB:
                             ["?, " for i in range(len(params) - 1)]) + "?)"
                         query = query.format(cols_text=cols_text)
                         cols_data[params.index('coin')] = c
-                        cols_data[params.index('id')] = params.index('id') + " - " + c
+                        cols_data[params.index('id')] = cols_data[params.index('id')] + " - " + c
                         cursor.execute(query, tuple(cols_data))
                     cursor.execute(query, tuple(cols_data))
                 except Exception as e:
