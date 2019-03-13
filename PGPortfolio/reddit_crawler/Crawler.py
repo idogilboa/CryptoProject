@@ -7,6 +7,30 @@ import datetime
 import os
 
 
+SUBREDDITS = {
+    "BCN": ["BytecoinBCN"],
+    "NAV": ["NavCoin"],
+    "XCP": ["counterparty_xcp"],
+    "NXT": ["NXT"],
+    "LBC": ["lbry"],
+    "REP": ["Augur"],
+    "PASC": ["pascalcoin"],
+    "BCH": ["Bitcoincash"],
+    "CVC": ["civicplatform"],
+    "NEO": ["NEO"],
+    "GAS": ["NEO"],
+    "EOS": ["eos"],
+    "SNT": ["statusim"],
+    "BAT": ["BATProject"],
+    "LOOM": ["loomnetwork"],
+    "QTUM": ["Qtum"],
+    "BNT": ["Bancor"],
+    "XRP": ["Ripple,XRP"],
+    "LTC": ["litecoin", "LitecoinMarkets"]
+    "ALL" : ["CryptoCurrency", "CryptoMarkets"]
+}
+
+
 class CrawlerDB:
 
     def __init__(self):
@@ -20,6 +44,7 @@ class CrawlerDB:
             cursor.execute('CREATE TABLE IF NOT EXISTS Threads (date INTEGER,'
                            ' created_utc datetime,'
                            ' subreddit varchar(100),'
+                           ' coin varchar(20),'
                            ' score INTEGER,'
                            ' author varchar(60),'
                            ' num_comments INTEGER,'
@@ -32,6 +57,7 @@ class CrawlerDB:
             cursor.execute('CREATE TABLE IF NOT EXISTS Comments (date INTEGER,'
                            ' created_utc datetime,'
                            ' subreddit varchar(100),'
+                           ' coin varchar(20),'
                            ' score INTEGER,'
                            ' author varchar(60),'
                            ' body varchar(1000),'
@@ -115,28 +141,7 @@ class CrawlerDB:
 
 class Crawler:
 
-    SUBREDDITS = {
-        "BCN": ["BytecoinBCN"],
-        "NAV": ["NavCoin"],
-        "XCP": ["counterparty_xcp"],
-        "NXT": ["NXT"],
-        "LBC": ["lbry"],
-        "REP": ["Augur"],
-        "PASC": ["pascalcoin"],
-        "BCH": ["Bitcoincash"],
-        "CVC": ["civicplatform"],
-        "NEO": ["NEO"],
-        "GAS": ["NEO"],
-        "EOS": ["eos"],
-        "SNT": ["statusim"],
-        "BAT": ["BATProject"],
-        "LOOM": ["loomnetwork"],
-        "QTUM": ["Qtum"],
-        "BNT": ["Bancor"],
-        "XRP": ["Ripple,XRP"],
-        "LTC": ["litecoin", "LitecoinMarkets"]
-        # "ALL" : ["CryptoCurrency", "CryptoMarkets"]
-    }
+    # cur.execute("SELECT * from Comments where subreddit=\"{subreddit}\" and date between (1520908527-33600) and 1520908527").format(subreddit=SUBREDDIT[current_coin])
 
     def __init__(self):
         # https://github.com/pushshift/api
@@ -177,7 +182,7 @@ class Crawler:
         return comments_data
 
     def fetch_all_reddit_data(self, start_time, end_time):
-        for coin, subs in self.SUBREDDITS.items():
+        for coin, subs in SUBREDDITS.items():
             for subreddit in subs:
                 print("Fetching {}:{}".format(coin, subreddit))
                 threads_data = self.get_subreddit_threads(subreddit, start_time, end_time)
