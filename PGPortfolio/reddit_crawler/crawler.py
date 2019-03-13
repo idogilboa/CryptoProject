@@ -149,6 +149,7 @@ class CrawlerDB:
                             ["?, " for i in range(len(params) - 1)]) + "?)"
                         query = query.format(cols_text=cols_text)
                         cols_data[params.index('coin')] = c
+                        cols_data[params.index('id')] = params.index('id') + " - " + c
                         cursor.execute(query, tuple(cols_data))
                 except Exception as e:
                     print("updateThreadTable::", e)
@@ -194,6 +195,7 @@ class CrawlerDB:
                             ["?, " for i in range(len(params) - 1)]) + "?)"
                         query = query.format(cols_text=cols_text)
                         cols_data[params.index('coin')] = c
+                        cols_data[params.index('id')] = params.index('id') + " - " + c
                         cursor.execute(query, tuple(cols_data))
                     cursor.execute(query, tuple(cols_data))
                 except Exception as e:
