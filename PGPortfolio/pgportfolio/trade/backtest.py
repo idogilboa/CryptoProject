@@ -68,7 +68,7 @@ class BackTest(trader.Trader):
         return inputs
 
     def trade_by_strategy(self, omega):
-        logging.info("the step is {}".format(self._steps))
+        logging.info("the step is %d/%d" % (self._steps, self._total_steps))
         logging.debug("the raw omega is {}".format(omega))
         future_price = np.concatenate((np.ones(1), self.__get_matrix_y()))
         pv_after_commission = calculate_pv_after_commission(omega, self._last_omega, self._commission_rate)
