@@ -11,7 +11,7 @@ from pgportfolio.tools.configprocess import load_config
 from pgportfolio.tools.trade import save_test_data
 from pgportfolio.tools.shortcut import execute_backtest
 from pgportfolio.resultprocess import plot
-from reddit_crawler.crawler import Crawler
+from nlp_algo.reddit_crawler import Crawler
 
 
 def build_parser():
