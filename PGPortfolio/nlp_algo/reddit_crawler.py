@@ -62,6 +62,11 @@ COINS_KEYWORDS = {
     "DASH": ["DASH"],
 }
 
+#will return comment_id, new coin for comments with no coin classification under a thread with a classification 
+preprocess_query = "Select DISTINCT c_id, t_coin from \
+(Select Comments.id as c_id, Comments.coin as c_coin, substr(Comments.parent_id, 4) as p_id from Comments where c_coin == 'Unknown') C \
+join (Select substr(Threads.id,0,7) as t_id, Threads.coin as t_coin from Threads where t_coin != 'Unknown') T \
+ON T.t_id == C.p_id"
 
 class CrawlerDB:
 
