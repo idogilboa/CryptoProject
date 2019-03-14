@@ -63,7 +63,6 @@ COINS_KEYWORDS = {
 }
 
 
-
 class CrawlerDB:
 
     def __init__(self):
@@ -230,9 +229,11 @@ class CrawlerDB:
         (Select Comments.id as c_id, Comments.coin as c_coin, substr(Comments.parent_id, 4) as p_id from Comments where c_coin == 'Unknown') C \
         join (Select substr(Threads.id,0,7) as t_id, Threads.coin as t_coin from Threads where t_coin != 'Unknown') T \
         ON T.t_id == C.p_id"
+
         update_query = "UPDATE Comments \
         SET coin = '{}'\
         WHERE id = '{}';"
+
         with sqlite3.connect(self.database_dir) as connection:
             cursor = connection.cursor()
             cursor.execute(query)
@@ -240,8 +241,6 @@ class CrawlerDB:
             for comment_id, coin in coin_classification:
                 cursor.execute(update_query.format(coin,comment_id))
             connection.commit()
-
-
 
 
 class Crawler:
@@ -298,14 +297,17 @@ class Crawler:
 
     def fill_missing_coin_classification(self):
         self.db.fill_missing_coin_classification()
+
+
 def main():
     parser = argparse.ArgumentParser(description='Reddit crawler.')
     parser.add_argument('-start_time', help='epoch start time')
     parser.add_argument('-end_time', help='epoch end time')
     args = parser.parse_args()
     crawler = Crawler()
-    crawler.fetch_all_reddit_data(args.start_time, args.end_time)
+    # crawler.fetch_all_reddit_data(args.start_time, args.end_time)
     crawler.fill_missing_coin_classification()
+
 
 if __name__ == '__main__':
     main()
