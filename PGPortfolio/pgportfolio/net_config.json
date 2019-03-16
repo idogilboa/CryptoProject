@@ -33,6 +33,12 @@
     "rolling_training_steps":85,
     "learning_rate":0.00028,
     "buffer_biased":5e-5
+  },
+
+  "cvar_constrains": {
+    "enabled": true,
+    "alpha": 0.95,
+    "gamma": 0.2
   }
 }
 

@@ -35,10 +35,12 @@ class NNAgent:
         self.__standard_deviation = tf.sqrt(tf.reduce_mean((self.__pv_vector - self.__mean) ** 2))
         self.__sharp_ratio = (self.__mean - 1) / self.__standard_deviation
         self.__loss = self.__set_loss_function()
-        self.__train_operation = self.init_train(learning_rate=self.__config["training"]["learning_rate"],
+        self.__train_operation = self.init_train(loss=self.__loss,
+                                                 learning_rate=self.__config["training"]["learning_rate"],
                                                  decay_steps=self.__config["training"]["decay_steps"],
                                                  decay_rate=self.__config["training"]["decay_rate"],
                                                  training_method=self.__config["training"]["training_method"])
+
         self.__saver = tf.train.Saver()
         if restore_dir:
             self.__saver.restore(self.__net.session, restore_dir)
@@ -105,13 +107,25 @@ class NNAgent:
             return -tf.reduce_mean(tf.log(self.pv_vector)) + \
                    LAMBDA * tf.reduce_mean(tf.reduce_sum(-tf.log(1 + 1e-6 - self.__net.output), reduction_indices=[1]))
 
+        def cvar_loss_function():
+            alpha = self.__config['cvar_constrains']['alpha']
+            lambda_maximum = 8
+            omega = -tf.log(self.pv_vector)
+            lamda = self.__net.lambda_output * lambda_maximum
+            c = self.__net.c_value_output
+            gamma = self.__config['cvar_constrains']['gamma']
+            return tf.reduce_mean(omega + lamda * (c + tf.maximum((1/(1-alpha)) * (omega - c), 0) - gamma))
+
+
         def with_last_w():
             return -tf.reduce_mean(tf.log(tf.reduce_sum(self.__net.output[:] * self.__future_price, reduction_indices=[1])
                                           -tf.reduce_sum(tf.abs(self.__net.output[:, 1:] - self.__net.previous_w)
                                                          *self.__commission_ratio, reduction_indices=[1])))
 
         loss_function = loss_function5
-        if self.__config["training"]["loss_function"] == "loss_function4":
+        if self.__config['cvar_constrains']['enabled']:
+            loss_function = cvar_loss_function
+        elif self.__config["training"]["loss_function"] == "loss_function4":
             loss_function = loss_function4
         elif self.__config["training"]["loss_function"] == "loss_function5":
             loss_function = loss_function5
@@ -129,18 +143,26 @@ class NNAgent:
                 loss_tensor += regularization_loss
         return loss_tensor
 
-    def init_train(self, learning_rate, decay_steps, decay_rate, training_method):
+    def init_train(self, learning_rate, decay_steps, decay_rate, training_method, loss):
         learning_rate = tf.train.exponential_decay(learning_rate, self.__global_step,
                                                    decay_steps, decay_rate, staircase=True)
+        learning_rate_2 = tf.train.exponential_decay(learning_rate, self.__global_step,
+                                                   decay_steps, decay_rate, staircase=True)
+        regular_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES) if "lambda" not in grad.name]
+        lambda_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES) if "lambda" in grad.name]
         if training_method == 'GradientDescent':
             train_step = tf.train.GradientDescentOptimizer(learning_rate).\
-                         minimize(self.__loss, global_step=self.__global_step)
+                         minimize(loss, global_step=self.__global_step)
         elif training_method == 'Adam':
             train_step = tf.train.AdamOptimizer(learning_rate).\
-                         minimize(self.__loss, global_step=self.__global_step)
+                         minimize(loss, global_step=self.__global_step, var_list=regular_grads)
+            if self.__config['cvar_constrains']['enabled']:
+                lambda_train_step = tf.train.AdamOptimizer(learning_rate_2).\
+                    minimize(-loss, global_step=self.__global_step, var_list=lambda_grads)
+                train_step = [train_step, lambda_train_step]
         elif training_method == 'RMSProp':
             train_step = tf.train.RMSPropOptimizer(learning_rate).\
-                         minimize(self.__loss, global_step=self.__global_step)
+                         minimize(loss, global_step=self.__global_step)
         else:
             raise ValueError()
         return train_step
@@ -160,10 +182,12 @@ class NNAgent:
         """
         tensors = list(tensors)
         tensors.append(self.__net.output)
+
         assert not np.any(np.isnan(x))
         assert not np.any(np.isnan(y))
         assert not np.any(np.isnan(last_w)),\
             "the last_w is {}".format(last_w)
+
         results = self.__net.session.run(tensors,
                                          feed_dict={self.__net.input_tensor: x,
                                                     self.__y: y,

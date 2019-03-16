@@ -24,7 +24,8 @@ class NeuralNetWork:
         self.layers_dict = {}
         self.layer_count = 0
 
-        self.output = self._build_network(layers)
+        self.output, self.lambda_output, self.c_value_output = self._build_network(layers)
+
 
     def _build_network(self, layers):
         pass
@@ -42,6 +43,8 @@ class CNN(NeuralNetWork):
 
     # grenrate the operation, the forward computaion
     def _build_network(self, layers):
+        c_value_output = None
+        lambda_output = None
         network = tf.transpose(self.input_tensor, [0, 2, 3, 1])
         # [batch, assets, window, features]
         network = network / network[:, :, -1, 0, None, None]
@@ -106,6 +109,17 @@ class CNN(NeuralNetWork):
                 network = tf.reshape(network, [self.input_num, int(height), 1, int(width*features)])
                 w = tf.reshape(self.previous_w, [-1, int(height), 1, 1])
                 network = tf.concat([network, w], axis=3)
+
+                lambda_output = tflearn.layers.core.fully_connected(network,
+                                                                    1,
+                                                                    activation='sigmoid',
+                                                                    bias=True,
+                                                                    name='lambda_output')
+                # c_value_output = None
+                c_value_output = tflearn.layers.core.fully_connected(network,
+                                                                   1,
+                                                                   bias=True)
+
                 network = tflearn.layers.conv_2d(network, 1, [1, 1], padding="valid",
                                                  regularizer=layer["regularizer"],
                                                  weight_decay=layer["weight_decay"])
@@ -148,7 +162,7 @@ class CNN(NeuralNetWork):
                 network = tf.reshape(network, [-1, self._rows, 1, int(layer["neuron_number"])])
             else:
                 raise ValueError("the layer {} not supported.".format(layer["type"]))
-        return network
+        return network, lambda_output, c_value_output
 
 
 def allint(l):
