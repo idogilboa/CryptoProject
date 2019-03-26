@@ -117,16 +117,18 @@ class CNN(NeuralNetWork):
                                                                     name='lambda_output')
                 # c_value_output = None
                 c_value_output = tflearn.layers.core.fully_connected(network,
-                                                                   1,
-                                                                   bias=True)
+                                                                     1,
+                                                                     bias=True,
+                                                                     name="c_value_output")
 
                 network = tflearn.layers.conv_2d(network, 1, [1, 1], padding="valid",
                                                  regularizer=layer["regularizer"],
-                                                 weight_decay=layer["weight_decay"])
+                                                 weight_decay=layer["weight_decay"],
+                                                 name="regular_output")
                 self.add_layer_to_dict(layer["type"], network)
                 network = network[:, :, 0, 0]
                 #btc_bias = tf.zeros((self.input_num, 1))
-                btc_bias = tf.get_variable("btc_bias", [1, 1], dtype=tf.float32,
+                btc_bias = tf.get_variable("regular_output_btc_bias", [1, 1], dtype=tf.float32,
                                        initializer=tf.zeros_initializer)
                 # self.add_layer_to_dict(layer["type"], network, weights=False)
                 btc_bias = tf.tile(btc_bias, [self.input_num, 1])

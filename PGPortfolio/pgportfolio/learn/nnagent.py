@@ -148,8 +148,10 @@ class NNAgent:
                                                    decay_steps, decay_rate, staircase=True)
         learning_rate_2 = tf.train.exponential_decay(learning_rate, self.__global_step,
                                                    decay_steps, decay_rate, staircase=True)
-        regular_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES) if "lambda" not in grad.name]
-        lambda_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES) if "lambda" in grad.name]
+        regular_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
+                         if "lambda" not in grad.name]
+        lambda_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
+                        if ("regular" not in grad.name) and ("c_value" not in grad.name)]
         if training_method == 'GradientDescent':
             train_step = tf.train.GradientDescentOptimizer(learning_rate).\
                          minimize(loss, global_step=self.__global_step)
@@ -158,7 +160,7 @@ class NNAgent:
                          minimize(loss, global_step=self.__global_step, var_list=regular_grads)
             if self.__config['cvar_constrains']['enabled']:
                 lambda_train_step = tf.train.AdamOptimizer(learning_rate_2).\
-                    minimize(-loss, global_step=self.__global_step, var_list=lambda_grads)
+                    minimize(-loss, var_list=lambda_grads)
                 train_step = [train_step, lambda_train_step]
         elif training_method == 'RMSProp':
             train_step = tf.train.RMSPropOptimizer(learning_rate).\
