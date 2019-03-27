@@ -35,7 +35,7 @@ class NNAgent:
         self.__standard_deviation = tf.sqrt(tf.reduce_mean((self.__pv_vector - self.__mean) ** 2))
         self.__sharp_ratio = (self.__mean - 1) / self.__standard_deviation
 
-        lambda_maximum = 8
+        lambda_maximum = 3#7
         self.__lambda = self.__net.lambda_output * lambda_maximum
         self.__c_value = self.__net.c_value_output
 
@@ -157,7 +157,8 @@ class NNAgent:
     def init_train(self, learning_rate, decay_steps, decay_rate, training_method, loss):
         learning_rate_1 = tf.train.exponential_decay(learning_rate, self.__global_step,
                                                    decay_steps, decay_rate, staircase=True)
-        learning_rate_2 = tf.train.exponential_decay(learning_rate / 10, self.__global_step,
+        #1.6
+        learning_rate_2 = tf.train.exponential_decay(learning_rate * 1.5, self.__global_step,
                                                    decay_steps, decay_rate, staircase=True)
         regular_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
                          if "lambda" not in grad.name]

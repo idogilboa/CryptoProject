@@ -41,6 +41,29 @@ NAMES = {"best": "Best Stock (Benchmark)",
          "wmamr": "WMAMR"
          }
 
+
+def plot_cvar(config, algo):
+    """
+    @:param config: config dictionary
+    @:param algos: list of strings representing the name of algorithms or index of pgportfolio result
+    """
+    results = _load_from_summary(algo, config)
+
+    plt.hist(results, bins='auto')
+
+    alpha = config['cvar_constrains']['alpha']
+    gamma = config['cvar_constrains']['gamma']
+
+    bottom_samples_num = int((1-alpha) * len(results))
+    bottom_results = results[np.argpartition(results, bottom_samples_num)[:bottom_samples_num]]
+    cvar = 1.0 - np.mean(bottom_results)
+    print("CVAR is %3f, Desired Gamma is %3f" % (cvar, gamma))
+
+    plt.savefig("result.eps", bbox_inches='tight',
+                pad_inches=0)
+    plt.show()
+
+
 def plot_backtest(config, algos, labels=None):
     """
     @:param config: config dictionary

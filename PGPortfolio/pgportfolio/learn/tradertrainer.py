@@ -118,7 +118,9 @@ class TraderTrainer:
         logging.info('the portfolio value on test set is %s\nlog_mean is %s\n'
                      'loss_value is %3f\nlog mean without commission fee is %3f\n' % \
                      (v_pv, v_log_mean, v_loss, log_mean_free))
-        logging.info('Lambda is %3f\n' % lamda)
+
+        if self.config['cvar_constrains']['enabled']:
+            logging.info('Lambda is %3f\nC value is %3f' % (np.mean(lamda), np.mean(c_value)))
 
         logging.info('='*30+"\n")
 
@@ -156,7 +158,8 @@ class TraderTrainer:
             tf.summary.histogram(var.name, var)
         grads = tf.gradients(self._agent.loss, tf.trainable_variables())
         for grad in grads:
-            tf.summary.histogram(grad.name + '/gradient', grad)
+            if grad is not None:
+                tf.summary.histogram(grad.name + '/gradient', grad)
         self.summary = tf.summary.merge_all()
         location = log_file_dir
         self.network_writer = tf.summary.FileWriter(location + '/network',

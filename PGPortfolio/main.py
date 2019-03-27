@@ -99,11 +99,14 @@ def main():
         logging.basicConfig(level=logging.INFO)
         algos = options.algos.split(",")
         if options.labels:
-            labels = options.labels.replace("_"," ")
+            labels = options.labels.replace("_", " ")
             labels = labels.split(",")
         else:
             labels = algos
         plot.plot_backtest(load_config(), algos, labels)
+    elif options.mode == "cvar":
+        logging.basicConfig(level=logging.INFO)
+        plot.plot_cvar(load_config(), algo=options.algos.split(",")[0])
     elif options.mode == "table":
         algos = options.algos.split(",")
         if options.labels:
