@@ -34,7 +34,13 @@ class NNAgent:
         self.__log_mean = tf.reduce_mean(tf.log(self.__pv_vector))
         self.__standard_deviation = tf.sqrt(tf.reduce_mean((self.__pv_vector - self.__mean) ** 2))
         self.__sharp_ratio = (self.__mean - 1) / self.__standard_deviation
+
+        lambda_maximum = 8
+        self.__lambda = self.__net.lambda_output * lambda_maximum
+        self.__c_value = self.__net.c_value_output
+
         self.__loss = self.__set_loss_function()
+
         self.__train_operation = self.init_train(loss=self.__loss,
                                                  learning_rate=self.__config["training"]["learning_rate"],
                                                  decay_steps=self.__config["training"]["decay_steps"],
@@ -46,6 +52,14 @@ class NNAgent:
             self.__saver.restore(self.__net.session, restore_dir)
         else:
             self.__net.session.run(tf.global_variables_initializer())
+
+    @property
+    def lamda(self):
+        return self.__lambda
+
+    @property
+    def c_value(self):
+        return self.__c_value
 
     @property
     def session(self):
@@ -109,12 +123,9 @@ class NNAgent:
 
         def cvar_loss_function():
             alpha = self.__config['cvar_constrains']['alpha']
-            lambda_maximum = 8
             omega = -tf.log(self.pv_vector)
-            lamda = self.__net.lambda_output * lambda_maximum
-            c = self.__net.c_value_output
             gamma = self.__config['cvar_constrains']['gamma']
-            return tf.reduce_mean(omega + lamda * (c + tf.maximum((1/(1-alpha)) * (omega - c), 0) - gamma))
+            return tf.reduce_mean(omega + self.lamda * (self.c_value + tf.maximum((1/(1-alpha)) * (omega - self.c_value), 0) - gamma))
 
 
         def with_last_w():
@@ -144,26 +155,27 @@ class NNAgent:
         return loss_tensor
 
     def init_train(self, learning_rate, decay_steps, decay_rate, training_method, loss):
-        learning_rate = tf.train.exponential_decay(learning_rate, self.__global_step,
+        learning_rate_1 = tf.train.exponential_decay(learning_rate, self.__global_step,
                                                    decay_steps, decay_rate, staircase=True)
-        learning_rate_2 = tf.train.exponential_decay(learning_rate, self.__global_step,
+        learning_rate_2 = tf.train.exponential_decay(learning_rate / 10, self.__global_step,
                                                    decay_steps, decay_rate, staircase=True)
         regular_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
                          if "lambda" not in grad.name]
         lambda_grads = [grad for grad in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
                         if ("regular" not in grad.name) and ("c_value" not in grad.name)]
         if training_method == 'GradientDescent':
-            train_step = tf.train.GradientDescentOptimizer(learning_rate).\
+            train_step = tf.train.GradientDescentOptimizer(learning_rate_1).\
                          minimize(loss, global_step=self.__global_step)
         elif training_method == 'Adam':
-            train_step = tf.train.AdamOptimizer(learning_rate).\
+            train_step = tf.train.AdamOptimizer(learning_rate_1).\
                          minimize(loss, global_step=self.__global_step, var_list=regular_grads)
             if self.__config['cvar_constrains']['enabled']:
-                lambda_train_step = tf.train.AdamOptimizer(learning_rate_2).\
-                    minimize(-loss, var_list=lambda_grads)
-                train_step = [train_step, lambda_train_step]
+                with tf.control_dependencies([train_step]):
+                    train_step = tf.train.AdamOptimizer(learning_rate_2).\
+                        minimize(-loss, var_list=lambda_grads)
+                # train_step = [train_step, lambda_train_step]
         elif training_method == 'RMSProp':
-            train_step = tf.train.RMSPropOptimizer(learning_rate).\
+            train_step = tf.train.RMSPropOptimizer(learning_rate_1).\
                          minimize(loss, global_step=self.__global_step)
         else:
             raise ValueError()

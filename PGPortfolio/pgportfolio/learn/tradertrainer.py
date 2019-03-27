@@ -94,13 +94,15 @@ class TraderTrainer:
         fast_train = self.train_config["fast_train"]
         tflearn.is_training(False, self._agent.session)
 
-        summary, v_pv, v_log_mean, v_loss, log_mean_free, weights= \
+        summary, v_pv, v_log_mean, v_loss, log_mean_free, weights, c_value, lamda = \
             self._evaluate("test", self.summary,
                            self._agent.portfolio_value,
                            self._agent.log_mean,
                            self._agent.loss,
                            self._agent.log_mean_free,
-                           self._agent.portfolio_weights)
+                           self._agent.portfolio_weights,
+                           self._agent.c_value,
+                           self._agent.lamda)
         self.test_writer.add_summary(summary, step)
 
         if not fast_train:
@@ -116,6 +118,8 @@ class TraderTrainer:
         logging.info('the portfolio value on test set is %s\nlog_mean is %s\n'
                      'loss_value is %3f\nlog mean without commission fee is %3f\n' % \
                      (v_pv, v_log_mean, v_loss, log_mean_free))
+        logging.info('Lambda is %3f\n' % lamda)
+
         logging.info('='*30+"\n")
 
         if not self.__snap_shot:
